@@ -1,23 +1,23 @@
 <!doctype html>
-<html lang="zh-CN" data-visualize-standalone>
+<html lang="en" data-visualize-standalone>
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>横屏手势控制原型</title>
+<title>横屏手势操作指引</title>
 <style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
 
 </head>
 <body>
-<iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="横屏手势控制原型" data-srcdoc="&lt;!doctype html&gt;
+<iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="横屏手势操作指引" data-srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot; data-visualize-standalone&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
 &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 &lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
-&lt;title&gt;横屏手势控制原型&lt;/title&gt;
+&lt;title&gt;横屏手势操作指引&lt;/title&gt;
 &lt;style&gt;:root {
   color-scheme: light dark;
   background-color: var(
@@ -1786,925 +1786,635 @@ html&gt;body{padding:0}&lt;/style&gt;
   syncTheme();
 })();
 &lt;/script&gt;
-&lt;div id=&quot;gesture-landscape-prototype&quot;&gt;
+&lt;div id=&quot;gesture-landscape-root&quot; lang=&quot;zh-CN&quot; aria-label=&quot;手机横屏手势操作指引&quot;&gt;
   &lt;style&gt;
-    #gesture-landscape-prototype {
-      --ui-bg: light-dark(#f5f6f9, #10131a);
-      --ui-panel: light-dark(#ffffff, #191e28);
-      --ui-soft: light-dark(#f0f3f8, #222936);
-      --ui-ink: light-dark(#202632, #f3f5fa);
-      --ui-muted: light-dark(#6c7484, #a7b0c0);
-      --ui-line: light-dark(#e2e6ed, #333b4b);
-      --ui-blue: light-dark(#3169e8, #85a6ff);
-      --ui-blue-soft: light-dark(#edf2ff, #26385d);
-      --ui-green: light-dark(#178768, #65d5b0);
-      --ui-green-soft: light-dark(#e8f7f1, #173b34);
-      color: var(--ui-ink);
-      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, sans-serif;
-    }
-
-    #gesture-landscape-prototype *,
-    #gesture-landscape-prototype *::before,
-    #gesture-landscape-prototype *::after {
-      box-sizing: border-box;
-    }
-
-    #gesture-landscape-prototype .preview-wrap {
-      display: flex;
-      justify-content: center;
-      padding: 10px;
-    }
-
-    #gesture-landscape-prototype .app-screen {
-      width: min(100%, 920px);
-      min-height: 370px;
-      padding: 13px 18px 16px;
+    #gesture-landscape-root {
+      --ui-bg: light-dark(#f0f3ed, #18231f);
+      --ui-surface: light-dark(#ffffff, #24322c);
+      --ui-surface-soft: light-dark(#f7f9f5, #2b3b34);
+      --ui-text: light-dark(#1c3028, #e5eee8);
+      --ui-muted: light-dark(#6d7c73, #a8b8ae);
+      --ui-line: light-dark(#e2e9e2, #3a4a41);
+      --ui-accent: light-dark(#357e65, #8bd1ad);
+      --ui-accent-soft: light-dark(#e3f2e9, #29473a);
+      --ui-skin: light-dark(#d8a17e, #ce9673);
+      --ui-phone: light-dark(#26352f, #d3e1d8);
+      width: min(100%, 844px);
+      aspect-ratio: 844 / 390;
+      margin-inline: auto;
+      position: relative;
       overflow: hidden;
-      color: var(--ui-ink);
-      background: var(--ui-bg);
-      border: 1px solid var(--ui-line);
-      border-radius: 24px;
-      box-shadow: 0 18px 60px rgba(25, 35, 55, 0.14);
+      color-scheme: light dark;
+      font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, sans-serif;
+      -webkit-font-smoothing: antialiased;
     }
 
-    #gesture-landscape-prototype .topbar {
+    #gesture-landscape-root * { box-sizing: border-box; }
+
+    #gesture-landscape-root .screen {
+      width: 844px;
+      height: 390px;
+      transform: scale(var(--ui-scale, 1));
+      transform-origin: top left;
+      padding: 16px 18px;
+      background:
+        radial-gradient(ellipse at 18% 5%, color-mix(in srgb, var(--ui-accent) 8%, transparent), transparent 38%),
+        var(--ui-bg);
+      color: var(--ui-text);
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 200px;
+      gap: 14px;
+    }
+
+    #gesture-landscape-root .guide {
+      min-width: 0;
+      display: grid;
+      grid-template-rows: 43px minmax(0, 1fr);
+      gap: 10px;
+    }
+
+    #gesture-landscape-root .guide-heading {
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 34px;
-      margin-bottom: 13px;
+      min-width: 0;
+      padding: 0 2px;
     }
 
-    #gesture-landscape-prototype .brand,
-    #gesture-landscape-prototype .connection {
-      display: flex;
-      align-items: center;
-      gap: 9px;
-      font-size: 12px;
+    #gesture-landscape-root .heading-copy { min-width: 0; }
+    #gesture-landscape-root h1,
+    #gesture-landscape-root h2,
+    #gesture-landscape-root p { margin: 0; }
+
+    #gesture-landscape-root h1 {
+      font-size: 19px;
+      line-height: 1.2;
+      letter-spacing: .01em;
       font-weight: 600;
-      letter-spacing: 0.01em;
     }
 
-    #gesture-landscape-prototype .brand-mark {
-      display: grid;
-      width: 30px;
-      height: 30px;
-      place-items: center;
-      color: #fff;
-      background: #315fd4;
-      border-radius: 10px;
-      font-size: 13px;
-      font-weight: 700;
-    }
-
-    #gesture-landscape-prototype .brand-name {
+    #gesture-landscape-root .subheading {
+      margin-top: 3px;
       color: var(--ui-muted);
-      letter-spacing: 0.12em;
+      font-size: 12px;
+      line-height: 1.25;
+      letter-spacing: .015em;
     }
 
-    #gesture-landscape-prototype .connection {
+    #gesture-landscape-root .mode-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 7px 10px;
+      border: 1px solid var(--ui-line);
+      border-radius: 999px;
       color: var(--ui-muted);
-      font-weight: 500;
+      font-size: 11px;
+      line-height: 1;
+      white-space: nowrap;
     }
 
-    #gesture-landscape-prototype .connection-dot {
+    #gesture-landscape-root .mode-dot,
+    #gesture-landscape-root .status-dot {
+      display: inline-block;
       width: 7px;
       height: 7px;
-      background: var(--ui-green);
+      flex: 0 0 auto;
       border-radius: 50%;
-      box-shadow: 0 0 0 4px var(--ui-green-soft);
+      background: var(--ui-accent);
     }
 
-    #gesture-landscape-prototype .layout {
+    #gesture-landscape-root .gesture-grid {
+      min-height: 0;
       display: grid;
-      grid-template-columns: minmax(0, 1.18fr) minmax(270px, 0.82fr);
-      gap: 24px;
-      align-items: stretch;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 10px;
     }
 
-    #gesture-landscape-prototype .control-area {
+    #gesture-landscape-root .gesture-card {
       min-width: 0;
-      padding: 3px 0 0 2px;
+      min-height: 0;
+      position: relative;
+      overflow: hidden;
+      display: grid;
+      grid-template-columns: 128px minmax(0, 1fr);
+      align-items: center;
+      gap: 8px;
+      padding: 10px 11px 10px 13px;
+      border: 1px solid var(--ui-line);
+      border-radius: 15px;
+      background: var(--ui-surface);
+      box-shadow: 0 4px 14px color-mix(in srgb, var(--ui-text) 4%, transparent);
     }
 
-    #gesture-landscape-prototype .eyebrow {
-      margin: 0 0 7px;
-      color: var(--ui-blue);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.13em;
+    #gesture-landscape-root .card-copy { align-self: stretch; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+
+    #gesture-landscape-root .card-index {
+      margin-bottom: 6px;
+      color: var(--ui-accent);
+      font-size: 10px;
+      line-height: 1;
+      letter-spacing: .12em;
+      font-variant-numeric: tabular-nums;
+      font-weight: 600;
     }
 
-    #gesture-landscape-prototype h1 {
-      margin: 0;
-      font-size: 25px;
-      font-weight: 650;
-      letter-spacing: -0.04em;
+    #gesture-landscape-root h2 {
+      font-size: 16px;
       line-height: 1.2;
+      letter-spacing: .01em;
+      font-weight: 600;
+      white-space: nowrap;
     }
 
-    #gesture-landscape-prototype .intro {
-      margin: 6px 0 11px;
+    #gesture-landscape-root .card-hint {
+      max-width: 120px;
+      margin-top: 6px;
       color: var(--ui-muted);
       font-size: 11px;
       line-height: 1.45;
     }
 
-    #gesture-landscape-prototype .stage {
+    #gesture-landscape-root .demo-stage {
+      height: 100%;
+      min-height: 115px;
       position: relative;
-      display: flex;
-      min-height: 112px;
-      align-items: center;
-      justify-content: center;
       overflow: hidden;
+      display: grid;
+      place-items: center;
+      border-radius: 11px;
       background:
-        radial-gradient(ellipse at 50% 64%, light-dark(rgba(74, 116, 220, 0.12), rgba(80, 118, 220, 0.18)), transparent 58%),
-        var(--ui-panel);
-      border: 1px solid var(--ui-line);
-      border-radius: 18px;
+        radial-gradient(ellipse at 55% 48%, color-mix(in srgb, var(--ui-accent) 10%, transparent), transparent 66%),
+        var(--ui-surface-soft);
     }
 
-    #gesture-landscape-prototype .stage-label {
+    #gesture-landscape-root .stage-baseline {
       position: absolute;
-      top: 13px;
-      left: 15px;
-      color: var(--ui-muted);
-      font-size: 11px;
-      font-weight: 600;
+      left: 14%;
+      right: 14%;
+      bottom: 22px;
+      height: 1px;
+      background: color-mix(in srgb, var(--ui-muted) 22%, transparent);
     }
 
-    #gesture-landscape-prototype .stage-current {
+    #gesture-landscape-root .hand-device {
+      position: relative;
+      z-index: 2;
+      width: 77px;
+      height: 59px;
+      display: grid;
+      place-items: center;
+    }
+
+    #gesture-landscape-root .wrist {
       position: absolute;
-      right: 14px;
-      bottom: 12px;
-      left: 14px;
-      overflow: hidden;
-      color: var(--ui-muted);
-      font-size: 11px;
-      text-align: center;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      left: 30px;
+      top: 32px;
+      width: 19px;
+      height: 27px;
+      border-radius: 8px 8px 5px 5px;
+      background: var(--ui-skin);
+      transform: rotate(-7deg);
     }
 
-    #gesture-landscape-prototype .stage-orbit {
+    #gesture-landscape-root .palm {
       position: absolute;
-      width: 89px;
-      height: 89px;
-      border: 1px dashed light-dark(rgba(49, 105, 232, 0.36), rgba(133, 166, 255, 0.42));
-      border-radius: 50%;
-      opacity: 0;
-      transform: scale(0.8);
-      transition: opacity 180ms ease, transform 180ms ease;
+      left: 19px;
+      top: 20px;
+      width: 40px;
+      height: 27px;
+      border-radius: 13px 13px 12px 12px;
+      background: var(--ui-skin);
+      transform: rotate(-5deg);
     }
 
-    #gesture-landscape-prototype .stage-orbit::after {
+    #gesture-landscape-root .finger {
+      position: absolute;
+      top: 16px;
+      width: 7px;
+      height: 19px;
+      border-radius: 5px;
+      background: var(--ui-skin);
+    }
+
+    #gesture-landscape-root .finger-one { left: 21px; transform: rotate(-7deg); }
+    #gesture-landscape-root .finger-two { left: 30px; top: 14px; height: 20px; }
+    #gesture-landscape-root .finger-three { left: 39px; top: 15px; height: 19px; transform: rotate(4deg); }
+    #gesture-landscape-root .thumb {
+      position: absolute;
+      left: 51px;
+      top: 28px;
+      width: 15px;
+      height: 8px;
+      border-radius: 6px;
+      background: var(--ui-skin);
+      transform: rotate(28deg);
+    }
+
+    #gesture-landscape-root .phone {
+      position: absolute;
+      z-index: 3;
+      left: 12px;
+      top: 8px;
+      width: 54px;
+      height: 34px;
+      border: 2px solid color-mix(in srgb, var(--ui-phone) 92%, #000 8%);
+      border-radius: 7px;
+      background: var(--ui-phone);
+      box-shadow: 0 4px 9px color-mix(in srgb, #10221a 18%, transparent);
+      transform: rotate(-4deg);
+    }
+
+    #gesture-landscape-root .phone::before {
+      content: &quot;&quot;;
+      position: absolute;
+      inset: 3px 4px;
+      border-radius: 3px;
+      background: linear-gradient(145deg, color-mix(in srgb, var(--ui-accent) 26%, var(--ui-surface)), color-mix(in srgb, var(--ui-accent) 8%, var(--ui-surface)));
+    }
+
+    #gesture-landscape-root .phone::after {
+      content: &quot;&quot;;
       position: absolute;
       top: 12px;
-      right: 5px;
-      width: 7px;
+      right: 2px;
+      width: 2px;
       height: 7px;
-      background: var(--ui-blue);
-      border-radius: 50%;
-      content: &quot;&quot;;
+      border-radius: 2px;
+      background: color-mix(in srgb, var(--ui-phone) 68%, var(--ui-surface));
     }
 
-    #gesture-landscape-prototype .phone {
-      position: relative;
-      z-index: 1;
-      width: 40px;
-      height: 68px;
-      background: var(--ui-panel);
-      border: 2px solid var(--ui-blue);
-      border-radius: 11px;
-      box-shadow: 0 8px 22px rgba(30, 62, 132, 0.15);
-    }
-
-    #gesture-landscape-prototype .phone::before {
+    #gesture-landscape-root .motion-arrow {
       position: absolute;
-      top: 5px;
+      z-index: 1;
+      color: var(--ui-accent);
+      font-size: 24px;
+      line-height: 1;
+      font-weight: 500;
+    }
+
+    #gesture-landscape-root .lift-arrow { right: 23px; top: 20px; animation: arrowLift 1.8s ease-in-out infinite; }
+    #gesture-landscape-root .press-arrow { right: 23px; top: 20px; animation: arrowPress 1.8s ease-in-out infinite; }
+    #gesture-landscape-root .lift-device { animation: phoneLift 2.3s ease-in-out infinite; }
+    #gesture-landscape-root .press-device { animation: phonePress 2.3s ease-in-out infinite; }
+
+    #gesture-landscape-root .motion-trail {
+      position: absolute;
+      z-index: 1;
       left: 50%;
-      width: 12px;
-      height: 3px;
-      background: var(--ui-line);
-      border-radius: 9px;
-      content: &quot;&quot;;
+      width: 1px;
+      height: 27px;
+      border-left: 1px dashed color-mix(in srgb, var(--ui-accent) 65%, transparent);
       transform: translateX(-50%);
     }
 
-    #gesture-landscape-prototype .phone::after {
+    #gesture-landscape-root .lift-trail { top: 17px; }
+    #gesture-landscape-root .press-trail { bottom: 17px; }
+
+    #gesture-landscape-root .orbit-ring {
       position: absolute;
-      right: 5px;
-      bottom: 5px;
-      left: 5px;
-      height: 37px;
-      background: linear-gradient(145deg, var(--ui-blue-soft), transparent);
-      border-radius: 4px;
+      width: 91px;
+      height: 64px;
+      border: 1.5px dashed color-mix(in srgb, var(--ui-accent) 68%, transparent);
+      border-radius: 50%;
+      animation: orbitSpin 4.8s linear infinite;
+    }
+
+    #gesture-landscape-root .orbit-ring::after {
       content: &quot;&quot;;
-    }
-
-    #gesture-landscape-prototype .stage-arrow {
       position: absolute;
-      color: var(--ui-blue);
-      font-size: 24px;
-      font-weight: 400;
-      opacity: 0;
-      transition: opacity 180ms ease;
+      right: 2px;
+      top: 12px;
+      width: 7px;
+      height: 7px;
+      border-top: 2px solid var(--ui-accent);
+      border-right: 2px solid var(--ui-accent);
+      transform: rotate(28deg);
     }
 
-    #gesture-landscape-prototype .stage-arrow.up {
-      top: 35px;
-      left: calc(50% + 33px);
-    }
-
-    #gesture-landscape-prototype .stage-arrow.down {
-      bottom: 34px;
-      left: calc(50% + 33px);
-    }
-
-    #gesture-landscape-prototype .stage-arrow.side {
+    #gesture-landscape-root .orbit-device {
+      position: absolute;
+      left: calc(50% + 39px);
       top: 50%;
-      left: calc(50% + 38px);
-      transform: translateY(-50%);
+      transform: translate(-50%, -50%);
+      animation: orbitCounter 4.8s linear infinite;
     }
 
-    #gesture-landscape-prototype .stage[data-motion=&quot;raise&quot;] .stage-arrow.up,
-    #gesture-landscape-prototype .stage[data-motion=&quot;lower&quot;] .stage-arrow.down,
-    #gesture-landscape-prototype .stage[data-motion=&quot;sway&quot;] .stage-arrow.side {
-      opacity: 1;
-    }
-
-    #gesture-landscape-prototype .stage[data-motion=&quot;circle&quot;] .stage-orbit {
-      opacity: 1;
-      transform: scale(1);
-    }
-
-    #gesture-landscape-prototype .stage.is-moving[data-motion=&quot;raise&quot;] .phone {
-      animation: phone-rise 1.4s cubic-bezier(0.22, 0.65, 0.3, 1) 3;
-    }
-
-    #gesture-landscape-prototype .stage.is-moving[data-motion=&quot;lower&quot;] .phone {
-      animation: phone-lower 1.4s cubic-bezier(0.22, 0.65, 0.3, 1) 3;
-    }
-
-    #gesture-landscape-prototype .stage.is-moving[data-motion=&quot;circle&quot;] .phone {
-      animation: phone-circle 1.4s ease-in-out 3;
-    }
-
-    #gesture-landscape-prototype .stage.is-moving[data-motion=&quot;circle&quot;] .stage-orbit {
-      animation: orbit-spin 1.4s linear 3;
-    }
-
-    #gesture-landscape-prototype .stage.is-moving[data-motion=&quot;sway&quot;] .phone {
-      animation: phone-sway 1.4s ease-in-out 3;
-    }
-
-    #gesture-landscape-prototype .actions-heading {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      gap: 10px;
-      margin: 11px 0 7px;
-    }
-
-    #gesture-landscape-prototype .actions-heading strong {
-      font-size: 12px;
-      font-weight: 650;
-    }
-
-    #gesture-landscape-prototype .actions-heading span {
+    #gesture-landscape-root .orbit-caption {
+      position: absolute;
+      bottom: 8px;
       color: var(--ui-muted);
       font-size: 10px;
+      line-height: 1;
+      letter-spacing: .02em;
     }
 
-    #gesture-landscape-prototype .actions {
-      display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
-      gap: 6px;
-    }
-
-    #gesture-landscape-prototype .gesture-button {
-      display: flex;
-      min-width: 0;
-      min-height: 77px;
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 3px;
-      padding: 7px 8px;
-      color: var(--ui-ink);
-      text-align: left;
-      background: var(--ui-panel);
-      border: 1px solid var(--ui-line);
-      border-radius: 13px;
-      cursor: pointer;
-      transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
-    }
-
-    #gesture-landscape-prototype .gesture-button:hover,
-    #gesture-landscape-prototype .gesture-button:focus-visible {
-      background: var(--ui-blue-soft);
-      border-color: var(--ui-blue);
-      outline: none;
-      transform: translateY(-1px);
-    }
-
-    #gesture-landscape-prototype .gesture-button:active {
-      transform: translateY(1px) scale(0.99);
-    }
-
-    #gesture-landscape-prototype .gesture-button.is-tapped .mini-phone {
-      animation-duration: 550ms;
-      animation-iteration-count: 1;
-    }
-
-    #gesture-landscape-prototype .gesture-button[data-gesture=&quot;raise&quot;].is-tapped .mini-phone {
-      animation-name: phone-rise;
-    }
-
-    #gesture-landscape-prototype .gesture-button[data-gesture=&quot;lower&quot;].is-tapped .mini-phone {
-      animation-name: phone-lower;
-    }
-
-    #gesture-landscape-prototype .gesture-button[data-gesture=&quot;circle&quot;].is-tapped .mini-phone {
-      animation-name: phone-circle;
-    }
-
-    #gesture-landscape-prototype .gesture-button[data-gesture=&quot;sway&quot;].is-tapped .mini-phone {
-      animation-name: phone-sway;
-    }
-
-    #gesture-landscape-prototype .mini-icon {
-      position: relative;
-      display: grid;
-      width: 30px;
-      height: 32px;
-      flex: 0 0 30px;
-      place-items: center;
-      color: var(--ui-blue);
-      font-size: 17px;
-      font-weight: 500;
-    }
-
-    #gesture-landscape-prototype .mini-phone {
-      position: relative;
-      width: 14px;
-      height: 25px;
-      background: var(--ui-blue-soft);
-      border: 1.5px solid var(--ui-blue);
-      border-radius: 5px;
-      animation-duration: 550ms;
-      animation-timing-function: ease-in-out;
-    }
-
-    #gesture-landscape-prototype .mini-phone::after {
+    #gesture-landscape-root .flick-left,
+    #gesture-landscape-root .flick-right {
       position: absolute;
-      right: 3px;
-      bottom: 3px;
-      left: 3px;
-      height: 10px;
-      background: light-dark(rgba(49, 105, 232, 0.16), rgba(133, 166, 255, 0.18));
-      border-radius: 2px;
-      content: &quot;&quot;;
-    }
-
-    #gesture-landscape-prototype .mini-arrow {
-      position: absolute;
-      z-index: 1;
-      font-size: 17px;
+      top: 34px;
+      color: color-mix(in srgb, var(--ui-accent) 76%, transparent);
+      font-size: 28px;
       line-height: 1;
     }
 
-    #gesture-landscape-prototype .gesture-copy {
-      display: grid;
+    #gesture-landscape-root .flick-left { left: 15px; animation: flickHintLeft 1.5s ease-in-out infinite; }
+    #gesture-landscape-root .flick-right { right: 15px; animation: flickHintRight 1.5s ease-in-out infinite; }
+    #gesture-landscape-root .flick-device { animation: phoneFlick 1.5s ease-in-out infinite; }
+
+    #gesture-landscape-root .queue-dialog {
       min-width: 0;
-      gap: 3px;
-    }
-
-    #gesture-landscape-prototype .gesture-name {
-      font-size: 12px;
-      font-weight: 650;
-      white-space: nowrap;
-    }
-
-    #gesture-landscape-prototype .gesture-hint {
-      color: var(--ui-muted);
-      font-size: 10px;
-      white-space: nowrap;
-    }
-
-    #gesture-landscape-prototype .queue-dialog {
-      display: flex;
-      min-width: 0;
-      flex-direction: column;
-      padding: 16px;
-      color: var(--ui-ink);
-      background: var(--ui-panel);
-      border: 1px solid var(--ui-line);
-      border-radius: 18px;
-      box-shadow: 0 10px 28px rgba(25, 35, 55, 0.08);
-    }
-
-    #gesture-landscape-prototype .dialog-title-row {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-    }
-
-    #gesture-landscape-prototype .dialog-title-row h2 {
-      margin: 0;
-      font-size: 16px;
-      font-weight: 650;
-      letter-spacing: -0.02em;
-    }
-
-    #gesture-landscape-prototype .queue-count {
-      display: grid;
-      min-width: 26px;
-      height: 26px;
-      padding: 0 7px;
-      place-items: center;
-      color: var(--ui-blue);
-      background: var(--ui-blue-soft);
-      border-radius: 9px;
-      font-size: 11px;
-      font-variant-numeric: tabular-nums;
-      font-weight: 700;
-    }
-
-    #gesture-landscape-prototype .dialog-copy {
-      margin: 6px 0 13px;
-      color: var(--ui-muted);
-      font-size: 11px;
-      line-height: 1.45;
-    }
-
-    #gesture-landscape-prototype .queue-section-label {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 7px;
-      color: var(--ui-muted);
-      font-size: 10px;
-      font-weight: 700;
-      letter-spacing: 0.07em;
-      text-transform: uppercase;
-    }
-
-    #gesture-landscape-prototype .state-pill {
-      padding: 4px 8px;
-      color: var(--ui-muted);
-      background: var(--ui-soft);
-      border-radius: 99px;
-      font-size: 10px;
-      font-weight: 600;
-      letter-spacing: 0;
-      text-transform: none;
-    }
-
-    #gesture-landscape-prototype .state-pill.is-active {
-      color: var(--ui-green);
-      background: var(--ui-green-soft);
-    }
-
-    #gesture-landscape-prototype .current-action {
-      padding: 11px 12px 10px;
-      background: var(--ui-soft);
-      border-radius: 12px;
-    }
-
-    #gesture-landscape-prototype .current-topline {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      margin-bottom: 7px;
-    }
-
-    #gesture-landscape-prototype .current-index {
-      color: var(--ui-blue);
-      font-size: 10px;
-      font-variant-numeric: tabular-nums;
-      font-weight: 700;
-    }
-
-    #gesture-landscape-prototype .current-name {
-      overflow: hidden;
-      font-size: 12px;
-      font-weight: 650;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    #gesture-landscape-prototype .current-hint {
-      margin: 0;
-      color: var(--ui-muted);
-      font-size: 10px;
-    }
-
-    #gesture-landscape-prototype .progress-track {
-      height: 4px;
-      margin-top: 10px;
-      overflow: hidden;
-      background: light-dark(#dfe5f0, #343d4c);
-      border-radius: 99px;
-    }
-
-    #gesture-landscape-prototype .progress-fill {
-      width: 0;
       height: 100%;
-      background: var(--ui-blue);
-      border-radius: inherit;
-      transition: width 90ms linear;
+      padding: 16px 14px 13px;
+      display: flex;
+      flex-direction: column;
+      border: 1px solid var(--ui-line);
+      border-radius: 17px;
+      background: var(--ui-surface);
+      box-shadow: 0 7px 22px color-mix(in srgb, var(--ui-text) 5%, transparent);
     }
 
-    #gesture-landscape-prototype .pending-heading {
-      margin-top: 15px;
-    }
-
-    #gesture-landscape-prototype .queue-list {
-      display: grid;
+    #gesture-landscape-root .queue-heading {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
       gap: 5px;
-      margin: 0;
-      padding: 0;
-      list-style: none;
     }
 
-    #gesture-landscape-prototype .queue-item {
-      display: grid;
-      grid-template-columns: 27px minmax(0, 1fr) auto;
+    #gesture-landscape-root .queue-heading h2 { font-size: 15px; line-height: 1.25; }
+
+    #gesture-landscape-root .queue-state {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      padding: 5px 7px;
+      border-radius: 999px;
+      background: var(--ui-accent-soft);
+      color: var(--ui-accent);
+      font-size: 10px;
+      line-height: 1;
+      white-space: nowrap;
+    }
+
+    #gesture-landscape-root .queue-current {
+      margin-top: 18px;
+      padding: 12px 11px;
+      border-radius: 12px;
+      background: var(--ui-surface-soft);
+    }
+
+    #gesture-landscape-root .eyebrow {
+      color: var(--ui-muted);
+      font-size: 10px;
+      line-height: 1.2;
+      letter-spacing: .04em;
+    }
+
+    #gesture-landscape-root .current-value {
+      display: flex;
       align-items: center;
       gap: 7px;
-      min-height: 34px;
-      border-bottom: 1px solid var(--ui-line);
-    }
-
-    #gesture-landscape-prototype .queue-number {
-      color: var(--ui-muted);
-      font-size: 10px;
-      font-variant-numeric: tabular-nums;
-      font-weight: 650;
-    }
-
-    #gesture-landscape-prototype .queue-item-name {
-      overflow: hidden;
-      font-size: 11px;
-      font-weight: 550;
-      text-overflow: ellipsis;
-      white-space: nowrap;
-    }
-
-    #gesture-landscape-prototype .queue-state {
-      color: var(--ui-muted);
-      font-size: 10px;
-      white-space: nowrap;
-    }
-
-    #gesture-landscape-prototype .queue-empty {
-      margin: 0;
-      padding: 10px 0 7px;
-      color: var(--ui-muted);
-      font-size: 11px;
-      line-height: 1.45;
-    }
-
-    #gesture-landscape-prototype .queue-note {
-      display: flex;
-      gap: 7px;
-      align-items: flex-start;
-      margin: auto 0 0;
-      padding-top: 15px;
-      color: var(--ui-muted);
-      font-size: 10px;
-      line-height: 1.45;
-    }
-
-    #gesture-landscape-prototype .queue-note-mark {
-      color: var(--ui-green);
+      margin-top: 8px;
       font-size: 13px;
-      line-height: 1;
+      line-height: 1.2;
+      font-weight: 600;
     }
 
-    #gesture-landscape-prototype .sr-only {
-      position: absolute;
-      width: 1px;
+    #gesture-landscape-root .current-value .status-dot {
+      width: 8px;
+      height: 8px;
+      background: color-mix(in srgb, var(--ui-muted) 48%, transparent);
+    }
+
+    #gesture-landscape-root .queue-divider {
       height: 1px;
-      overflow: hidden;
-      clip: rect(0, 0, 0, 0);
-      white-space: nowrap;
-      clip-path: inset(50%);
+      margin: 16px 1px 13px;
+      background: var(--ui-line);
     }
 
-    @keyframes phone-rise {
-      0%, 100% { transform: translateY(7px); }
-      55% { transform: translateY(-12px); }
+    #gesture-landscape-root .queue-flow-title {
+      color: var(--ui-text);
+      font-size: 11px;
+      line-height: 1.25;
+      font-weight: 600;
     }
 
-    @keyframes phone-lower {
-      0%, 100% { transform: translateY(-7px); }
-      55% { transform: translateY(12px); }
+    #gesture-landscape-root .queue-flow {
+      position: relative;
+      margin-top: 11px;
+      display: grid;
+      gap: 9px;
     }
 
-    @keyframes phone-circle {
-      0% { transform: translate(0, 0) rotate(-8deg); }
-      25% { transform: translate(9px, -4px) rotate(10deg); }
-      50% { transform: translate(0, -8px) rotate(23deg); }
-      75% { transform: translate(-9px, -4px) rotate(10deg); }
-      100% { transform: translate(0, 0) rotate(-8deg); }
+    #gesture-landscape-root .queue-flow::before {
+      content: &quot;&quot;;
+      position: absolute;
+      left: 11px;
+      top: 14px;
+      bottom: 14px;
+      width: 1px;
+      background: var(--ui-line);
     }
 
-    @keyframes phone-sway {
-      0%, 100% { transform: translateX(-9px) rotate(-8deg); }
-      50% { transform: translateX(9px) rotate(8deg); }
+    #gesture-landscape-root .flow-step {
+      position: relative;
+      display: grid;
+      grid-template-columns: 22px minmax(0, 1fr);
+      align-items: center;
+      gap: 7px;
+      min-height: 25px;
+      color: var(--ui-muted);
+      font-size: 11px;
+      line-height: 1.25;
     }
 
-    @keyframes orbit-spin {
-      to { transform: rotate(360deg) scale(1); }
+    #gesture-landscape-root .flow-number {
+      width: 22px;
+      height: 22px;
+      display: grid;
+      place-items: center;
+      border: 1px solid var(--ui-line);
+      border-radius: 50%;
+      background: var(--ui-surface);
+      color: var(--ui-accent);
+      font-size: 10px;
+      line-height: 1;
+      font-variant-numeric: tabular-nums;
     }
 
-    @media (max-width: 660px) {
-      #gesture-landscape-prototype .app-screen {
-        min-height: 0;
-        padding: 16px;
-      }
-
-      #gesture-landscape-prototype .layout {
-        grid-template-columns: minmax(0, 1fr);
-        gap: 14px;
-      }
-
-      #gesture-landscape-prototype .queue-dialog {
-        min-height: 270px;
-      }
+    #gesture-landscape-root .queue-note {
+      margin-top: auto;
+      padding: 10px 10px 9px;
+      border-left: 2px solid var(--ui-accent);
+      border-radius: 0 9px 9px 0;
+      background: var(--ui-accent-soft);
+      color: var(--ui-text);
+      font-size: 11px;
+      line-height: 1.55;
     }
 
-    @media (max-width: 390px) {
-      #gesture-landscape-prototype .app-screen {
-        padding: 13px;
-        border-radius: 18px;
-      }
+    #gesture-landscape-root .queue-note strong { font-weight: 600; }
 
-      #gesture-landscape-prototype .actions {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 6px;
-      }
-
-      #gesture-landscape-prototype .gesture-button {
-        min-height: 57px;
-        flex-direction: row;
-        align-items: center;
-        gap: 7px;
-        padding: 8px;
-      }
-
-      #gesture-landscape-prototype .mini-icon {
-        width: 30px;
-        height: 34px;
-        flex-basis: 30px;
-      }
-
-      #gesture-landscape-prototype .gesture-name {
-        font-size: 11px;
-      }
-
-      #gesture-landscape-prototype .gesture-hint {
-        font-size: 9px;
-      }
+    @keyframes phoneLift {
+      0%, 100% { transform: translateY(8px); }
+      50% { transform: translateY(-8px); }
+    }
+    @keyframes phonePress {
+      0%, 100% { transform: translateY(-8px); }
+      50% { transform: translateY(8px); }
+    }
+    @keyframes arrowLift {
+      0%, 100% { transform: translateY(7px); opacity: .45; }
+      50% { transform: translateY(-7px); opacity: 1; }
+    }
+    @keyframes arrowPress {
+      0%, 100% { transform: translateY(-7px); opacity: .45; }
+      50% { transform: translateY(7px); opacity: 1; }
+    }
+    @keyframes orbitSpin { to { transform: rotate(1turn); } }
+    @keyframes orbitCounter { to { transform: translate(-50%, -50%) rotate(-1turn); } }
+    @keyframes phoneFlick {
+      0%, 100% { transform: translateX(-15px) rotate(-4deg); }
+      50% { transform: translateX(15px) rotate(4deg); }
+    }
+    @keyframes flickHintLeft {
+      0%, 100% { opacity: .38; transform: translateX(4px); }
+      50% { opacity: 1; transform: translateX(-3px); }
+    }
+    @keyframes flickHintRight {
+      0%, 100% { opacity: 1; transform: translateX(3px); }
+      50% { opacity: .38; transform: translateX(-4px); }
     }
 
     @media (prefers-reduced-motion: reduce) {
-      #gesture-landscape-prototype *,
-      #gesture-landscape-prototype *::before,
-      #gesture-landscape-prototype *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        scroll-behavior: auto !important;
-        transition-duration: 0.01ms !important;
-      }
+      #gesture-landscape-root *,
+      #gesture-landscape-root *::before,
+      #gesture-landscape-root *::after { animation: none !important; }
+      #gesture-landscape-root .lift-device { transform: translateY(-5px); }
+      #gesture-landscape-root .press-device { transform: translateY(5px); }
+      #gesture-landscape-root .lift-arrow,
+      #gesture-landscape-root .press-arrow { opacity: 1; }
+      #gesture-landscape-root .flick-device { transform: translateX(0); }
     }
   &lt;/style&gt;
-  &lt;div class=&quot;preview-wrap viz-dotted-background&quot;&gt;
-    &lt;main class=&quot;app-screen&quot; aria-label=&quot;横屏手势控制原型&quot;&gt;
-      &lt;header class=&quot;topbar&quot;&gt;
-        &lt;div class=&quot;brand&quot;&gt;
-          &lt;span class=&quot;brand-mark&quot; aria-hidden=&quot;true&quot;&gt;M&lt;/span&gt;
-          &lt;span class=&quot;brand-name&quot;&gt;MOTION CONTROL&lt;/span&gt;
+
+  &lt;main class=&quot;screen&quot; aria-label=&quot;手势操作示意&quot;&gt;
+    &lt;section class=&quot;guide&quot; aria-labelledby=&quot;gesture-guide-title&quot;&gt;
+      &lt;header class=&quot;guide-heading&quot;&gt;
+        &lt;div class=&quot;heading-copy&quot;&gt;
+          &lt;h1 id=&quot;gesture-guide-title&quot;&gt;手势操作指引&lt;/h1&gt;
+          &lt;p class=&quot;subheading&quot;&gt;轻握手机，跟随动画完成动作&lt;/p&gt;
         &lt;/div&gt;
-        &lt;div class=&quot;connection&quot;&gt;&lt;span class=&quot;connection-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;手机已连接&lt;/div&gt;
+        &lt;div class=&quot;mode-label&quot;&gt;&lt;span class=&quot;mode-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;手机横屏&lt;/div&gt;
       &lt;/header&gt;
 
-      &lt;div class=&quot;layout&quot;&gt;
-        &lt;section class=&quot;control-area&quot; aria-labelledby=&quot;gesture-title&quot;&gt;
-          &lt;p class=&quot;eyebrow&quot;&gt;LANDSCAPE · 手势控制&lt;/p&gt;
-          &lt;h1 id=&quot;gesture-title&quot;&gt;动作控制&lt;/h1&gt;
-          &lt;p class=&quot;intro&quot;&gt;点选一个动作开始示范。执行中收到的新手势会按顺序排队。&lt;/p&gt;
-
-          &lt;div class=&quot;stage&quot; id=&quot;gesture-stage&quot; data-motion=&quot;idle&quot; aria-label=&quot;手机动作示范区&quot;&gt;
-            &lt;span class=&quot;stage-label&quot;&gt;动作示范&lt;/span&gt;
-            &lt;span class=&quot;stage-arrow up&quot; aria-hidden=&quot;true&quot;&gt;↑&lt;/span&gt;
-            &lt;span class=&quot;stage-arrow down&quot; aria-hidden=&quot;true&quot;&gt;↓&lt;/span&gt;
-            &lt;span class=&quot;stage-arrow side&quot; aria-hidden=&quot;true&quot;&gt;↔&lt;/span&gt;
-            &lt;span class=&quot;stage-orbit&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-            &lt;span class=&quot;phone&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-            &lt;span class=&quot;stage-current&quot; id=&quot;stage-caption&quot;&gt;选择一个手势，查看手机移动方式&lt;/span&gt;
+      &lt;div class=&quot;gesture-grid&quot; aria-label=&quot;四种手势示意&quot;&gt;
+        &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;gesture-lift-title&quot;&gt;
+          &lt;div class=&quot;card-copy&quot;&gt;
+            &lt;p class=&quot;card-index&quot;&gt;01 / VERTICAL&lt;/p&gt;
+            &lt;h2 id=&quot;gesture-lift-title&quot;&gt;手机上抬&lt;/h2&gt;
+            &lt;p class=&quot;card-hint&quot;&gt;手持手机，平稳向上抬&lt;/p&gt;
           &lt;/div&gt;
-
-          &lt;div class=&quot;actions-heading&quot;&gt;
-            &lt;strong&gt;四种手势&lt;/strong&gt;
-            &lt;span&gt;轻点按钮开始&lt;/span&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;actions&quot; aria-label=&quot;手势操作&quot;&gt;
-            &lt;button class=&quot;gesture-button&quot; type=&quot;button&quot; data-gesture=&quot;raise&quot; aria-label=&quot;手机上抬，向上移动手机&quot;&gt;
-              &lt;span class=&quot;mini-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;mini-phone&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mini-arrow&quot;&gt;↑&lt;/span&gt;&lt;/span&gt;
-              &lt;span class=&quot;gesture-copy&quot;&gt;&lt;span class=&quot;gesture-name&quot;&gt;手机上抬&lt;/span&gt;&lt;span class=&quot;gesture-hint&quot;&gt;向上抬起&lt;/span&gt;&lt;/span&gt;
-            &lt;/button&gt;
-            &lt;button class=&quot;gesture-button&quot; type=&quot;button&quot; data-gesture=&quot;lower&quot; aria-label=&quot;手机下压，向下移动手机&quot;&gt;
-              &lt;span class=&quot;mini-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;mini-phone&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mini-arrow&quot;&gt;↓&lt;/span&gt;&lt;/span&gt;
-              &lt;span class=&quot;gesture-copy&quot;&gt;&lt;span class=&quot;gesture-name&quot;&gt;手机下压&lt;/span&gt;&lt;span class=&quot;gesture-hint&quot;&gt;向下压低&lt;/span&gt;&lt;/span&gt;
-            &lt;/button&gt;
-            &lt;button class=&quot;gesture-button&quot; type=&quot;button&quot; data-gesture=&quot;circle&quot; aria-label=&quot;水平画圈，手机水平绕圈移动&quot;&gt;
-              &lt;span class=&quot;mini-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;mini-phone&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mini-arrow&quot;&gt;⟳&lt;/span&gt;&lt;/span&gt;
-              &lt;span class=&quot;gesture-copy&quot;&gt;&lt;span class=&quot;gesture-name&quot;&gt;水平画圈&lt;/span&gt;&lt;span class=&quot;gesture-hint&quot;&gt;水平绕圈&lt;/span&gt;&lt;/span&gt;
-            &lt;/button&gt;
-            &lt;button class=&quot;gesture-button&quot; type=&quot;button&quot; data-gesture=&quot;sway&quot; aria-label=&quot;左右轻挥，手机左右摆动&quot;&gt;
-              &lt;span class=&quot;mini-icon&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;mini-phone&quot;&gt;&lt;/span&gt;&lt;span class=&quot;mini-arrow&quot;&gt;↔&lt;/span&gt;&lt;/span&gt;
-              &lt;span class=&quot;gesture-copy&quot;&gt;&lt;span class=&quot;gesture-name&quot;&gt;左右轻挥&lt;/span&gt;&lt;span class=&quot;gesture-hint&quot;&gt;左右摆动&lt;/span&gt;&lt;/span&gt;
-            &lt;/button&gt;
-          &lt;/div&gt;
-        &lt;/section&gt;
-
-        &lt;section class=&quot;queue-dialog&quot; role=&quot;dialog&quot; aria-labelledby=&quot;queue-title&quot; aria-modal=&quot;false&quot;&gt;
-          &lt;div class=&quot;dialog-title-row&quot;&gt;
-            &lt;h2 id=&quot;queue-title&quot;&gt;动作队列&lt;/h2&gt;
-            &lt;span class=&quot;queue-count&quot; id=&quot;queue-count&quot; aria-label=&quot;待执行动作数量&quot;&gt;0&lt;/span&gt;
-          &lt;/div&gt;
-          &lt;p class=&quot;dialog-copy&quot;&gt;按手势到达顺序记录，当前动作完成后再继续。&lt;/p&gt;
-
-          &lt;div class=&quot;queue-section-label&quot;&gt;
-            &lt;span&gt;当前动作&lt;/span&gt;
-            &lt;span class=&quot;state-pill&quot; id=&quot;action-state&quot;&gt;待命&lt;/span&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;current-action&quot;&gt;
-            &lt;div class=&quot;current-topline&quot;&gt;
-              &lt;span class=&quot;current-index&quot; id=&quot;current-index&quot;&gt;—&lt;/span&gt;
-              &lt;span class=&quot;current-name&quot; id=&quot;current-name&quot;&gt;暂无执行中的动作&lt;/span&gt;
-            &lt;/div&gt;
-            &lt;p class=&quot;current-hint&quot; id=&quot;current-hint&quot;&gt;触发任一手势后立即开始&lt;/p&gt;
-            &lt;div class=&quot;progress-track&quot; id=&quot;progress-track&quot; hidden role=&quot;progressbar&quot; aria-label=&quot;当前动作进度&quot; aria-valuemin=&quot;0&quot; aria-valuemax=&quot;100&quot; aria-valuenow=&quot;0&quot;&gt;
-              &lt;div class=&quot;progress-fill&quot; id=&quot;progress-fill&quot;&gt;&lt;/div&gt;
+          &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;手持手机向上抬起&quot;&gt;
+            &lt;span class=&quot;stage-baseline&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;motion-trail lift-trail&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;motion-arrow lift-arrow&quot; aria-hidden=&quot;true&quot;&gt;↑&lt;/span&gt;
+            &lt;div class=&quot;hand-device lift-device&quot; aria-hidden=&quot;true&quot;&gt;
+              &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
+              &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
+              &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
             &lt;/div&gt;
           &lt;/div&gt;
+        &lt;/article&gt;
 
-          &lt;div class=&quot;queue-section-label pending-heading&quot;&gt;
-            &lt;span&gt;后续顺序&lt;/span&gt;
-            &lt;span id=&quot;pending-count&quot;&gt;0 项&lt;/span&gt;
+        &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;gesture-press-title&quot;&gt;
+          &lt;div class=&quot;card-copy&quot;&gt;
+            &lt;p class=&quot;card-index&quot;&gt;02 / VERTICAL&lt;/p&gt;
+            &lt;h2 id=&quot;gesture-press-title&quot;&gt;手机下压&lt;/h2&gt;
+            &lt;p class=&quot;card-hint&quot;&gt;手持手机，轻缓向下压&lt;/p&gt;
           &lt;/div&gt;
-          &lt;ol class=&quot;queue-list&quot; id=&quot;queue-list&quot;&gt;&lt;/ol&gt;
-          &lt;p class=&quot;queue-empty&quot; id=&quot;queue-empty&quot;&gt;新手势会排在这里，不会打断正在执行的动作。&lt;/p&gt;
+          &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;手持手机向下压低&quot;&gt;
+            &lt;span class=&quot;stage-baseline&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;motion-trail press-trail&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+            &lt;span class=&quot;motion-arrow press-arrow&quot; aria-hidden=&quot;true&quot;&gt;↓&lt;/span&gt;
+            &lt;div class=&quot;hand-device press-device&quot; aria-hidden=&quot;true&quot;&gt;
+              &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
+              &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
+              &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/article&gt;
 
-          &lt;p class=&quot;queue-note&quot;&gt;&lt;span class=&quot;queue-note-mark&quot; aria-hidden=&quot;true&quot;&gt;↳&lt;/span&gt;&lt;span id=&quot;queue-note-text&quot;&gt;执行中继续点选，动作会依次等待。&lt;/span&gt;&lt;/p&gt;
-          &lt;div class=&quot;sr-only&quot; id=&quot;live-status&quot; aria-live=&quot;polite&quot;&gt;&lt;/div&gt;
-        &lt;/section&gt;
+        &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;gesture-circle-title&quot;&gt;
+          &lt;div class=&quot;card-copy&quot;&gt;
+            &lt;p class=&quot;card-index&quot;&gt;03 / HORIZONTAL&lt;/p&gt;
+            &lt;h2 id=&quot;gesture-circle-title&quot;&gt;水平画圈&lt;/h2&gt;
+            &lt;p class=&quot;card-hint&quot;&gt;保持水平，沿圆圈移动&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;保持手机水平，沿圆形轨迹移动&quot;&gt;
+            &lt;div class=&quot;orbit-ring&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;hand-device orbit-device&quot; aria-hidden=&quot;true&quot;&gt;
+              &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
+              &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
+              &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+            &lt;p class=&quot;orbit-caption&quot;&gt;保持手机平稳&lt;/p&gt;
+          &lt;/div&gt;
+        &lt;/article&gt;
+
+        &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;gesture-flick-title&quot;&gt;
+          &lt;div class=&quot;card-copy&quot;&gt;
+            &lt;p class=&quot;card-index&quot;&gt;04 / HORIZONTAL&lt;/p&gt;
+            &lt;h2 id=&quot;gesture-flick-title&quot;&gt;左右轻挥&lt;/h2&gt;
+            &lt;p class=&quot;card-hint&quot;&gt;手腕带动手机左右轻挥&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;手持手机轻轻向左、向右挥动&quot;&gt;
+            &lt;span class=&quot;flick-left&quot; aria-hidden=&quot;true&quot;&gt;‹&lt;/span&gt;
+            &lt;span class=&quot;flick-right&quot; aria-hidden=&quot;true&quot;&gt;›&lt;/span&gt;
+            &lt;div class=&quot;hand-device flick-device&quot; aria-hidden=&quot;true&quot;&gt;
+              &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
+              &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
+              &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+            &lt;/div&gt;
+          &lt;/div&gt;
+        &lt;/article&gt;
       &lt;/div&gt;
-    &lt;/main&gt;
-  &lt;/div&gt;
+    &lt;/section&gt;
+
+    &lt;aside class=&quot;queue-dialog&quot; role=&quot;dialog&quot; aria-modal=&quot;false&quot; aria-labelledby=&quot;gesture-queue-title&quot; aria-describedby=&quot;gesture-queue-rule&quot;&gt;
+      &lt;div class=&quot;queue-heading&quot;&gt;
+        &lt;h2 id=&quot;gesture-queue-title&quot;&gt;动作队列&lt;/h2&gt;
+        &lt;span class=&quot;queue-state&quot;&gt;&lt;span class=&quot;status-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;待机&lt;/span&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;queue-current&quot;&gt;
+        &lt;p class=&quot;eyebrow&quot;&gt;当前动作&lt;/p&gt;
+        &lt;p class=&quot;current-value&quot;&gt;&lt;span class=&quot;status-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;等待手势&lt;/p&gt;
+      &lt;/div&gt;
+
+      &lt;div class=&quot;queue-divider&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+      &lt;p class=&quot;queue-flow-title&quot;&gt;识别后按顺序处理&lt;/p&gt;
+      &lt;div class=&quot;queue-flow&quot; aria-label=&quot;动作处理顺序&quot;&gt;
+        &lt;div class=&quot;flow-step&quot;&gt;&lt;span class=&quot;flow-number&quot;&gt;01&lt;/span&gt;&lt;span&gt;当前动作继续执行&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;flow-step&quot;&gt;&lt;span class=&quot;flow-number&quot;&gt;02&lt;/span&gt;&lt;span&gt;新手势依序排队&lt;/span&gt;&lt;/div&gt;
+        &lt;div class=&quot;flow-step&quot;&gt;&lt;span class=&quot;flow-number&quot;&gt;03&lt;/span&gt;&lt;span&gt;完成后执行下一项&lt;/span&gt;&lt;/div&gt;
+      &lt;/div&gt;
+
+      &lt;p class=&quot;queue-note&quot; id=&quot;gesture-queue-rule&quot;&gt;&lt;strong&gt;执行中收到新手势&lt;/strong&gt;会加入队列等待，当前动作不会被打断。&lt;/p&gt;
+    &lt;/aside&gt;
+  &lt;/main&gt;
+
   &lt;script&gt;
     (() =&gt; {
-      const root = document.getElementById(&quot;gesture-landscape-prototype&quot;);
-      const stage = root.querySelector(&quot;#gesture-stage&quot;);
-      const stageCaption = root.querySelector(&quot;#stage-caption&quot;);
-      const currentIndex = root.querySelector(&quot;#current-index&quot;);
-      const currentName = root.querySelector(&quot;#current-name&quot;);
-      const currentHint = root.querySelector(&quot;#current-hint&quot;);
-      const actionState = root.querySelector(&quot;#action-state&quot;);
-      const progressTrack = root.querySelector(&quot;#progress-track&quot;);
-      const progressFill = root.querySelector(&quot;#progress-fill&quot;);
-      const queueList = root.querySelector(&quot;#queue-list&quot;);
-      const queueEmpty = root.querySelector(&quot;#queue-empty&quot;);
-      const queueCount = root.querySelector(&quot;#queue-count&quot;);
-      const pendingCount = root.querySelector(&quot;#pending-count&quot;);
-      const liveStatus = root.querySelector(&quot;#live-status&quot;);
-      const actions = [
-        { id: &quot;raise&quot;, name: &quot;手机上抬&quot;, duration: 4200 },
-        { id: &quot;lower&quot;, name: &quot;手机下压&quot;, duration: 4200 },
-        { id: &quot;circle&quot;, name: &quot;水平画圈&quot;, duration: 4200 },
-        { id: &quot;sway&quot;, name: &quot;左右轻挥&quot;, duration: 4200 }
-      ];
-      let activeAction = null;
-      let queue = [];
-      let startedAt = 0;
-      let completionTimer = null;
-      let progressTimer = null;
-
-      function formatIndex(value) {
-        return String(value).padStart(2, &quot;0&quot;);
-      }
-
-      function updateProgress() {
-        if (!activeAction) return;
-        const elapsed = Date.now() - startedAt;
-        const progress = Math.min(100, Math.round(elapsed / activeAction.duration * 100));
-        progressFill.style.width = progress + &quot;%&quot;;
-        progressTrack.setAttribute(&quot;aria-valuenow&quot;, String(progress));
-      }
-
-      function updateQueue() {
-        queueCount.textContent = String(queue.length);
-        queueCount.setAttribute(&quot;aria-label&quot;, &quot;待执行动作数量：&quot; + queue.length);
-        pendingCount.textContent = queue.length + &quot; 项&quot;;
-        queueEmpty.hidden = queue.length &gt; 0;
-        queueList.replaceChildren();
-        queue.forEach((action, index) =&gt; {
-          const item = document.createElement(&quot;li&quot;);
-          item.className = &quot;queue-item&quot;;
-          const number = document.createElement(&quot;span&quot;);
-          number.className = &quot;queue-number&quot;;
-          number.textContent = formatIndex(index + (activeAction ? 2 : 1));
-          const name = document.createElement(&quot;span&quot;);
-          name.className = &quot;queue-item-name&quot;;
-          name.textContent = action.name;
-          const state = document.createElement(&quot;span&quot;);
-          state.className = &quot;queue-state&quot;;
-          state.textContent = &quot;排队中&quot;;
-          item.append(number, name, state);
-          queueList.append(item);
-        });
-      }
-
-      function updateActive() {
-        if (activeAction) {
-          currentIndex.textContent = &quot;01&quot;;
-          currentName.textContent = activeAction.name;
-          currentHint.textContent = &quot;正在执行 · 完成后自动开始下一项&quot;;
-          actionState.textContent = &quot;执行中&quot;;
-          actionState.classList.add(&quot;is-active&quot;);
-          stageCaption.textContent = activeAction.name + &quot; · 正在示范&quot;;
-          stage.dataset.motion = activeAction.id;
-          progressTrack.hidden = false;
-          updateProgress();
-        } else {
-          currentIndex.textContent = &quot;—&quot;;
-          currentName.textContent = &quot;暂无执行中的动作&quot;;
-          currentHint.textContent = &quot;触发任一手势后立即开始&quot;;
-          actionState.textContent = &quot;待命&quot;;
-          actionState.classList.remove(&quot;is-active&quot;);
-          stageCaption.textContent = &quot;选择一个手势，查看手机移动方式&quot;;
-          stage.dataset.motion = &quot;idle&quot;;
-          progressTrack.hidden = true;
-          progressFill.style.width = &quot;0%&quot;;
-          progressTrack.setAttribute(&quot;aria-valuenow&quot;, &quot;0&quot;);
-        }
-      }
-
-      function updateAll() {
-        updateActive();
-        updateQueue();
-      }
-
-      function startAction(action) {
-        activeAction = action;
-        startedAt = Date.now();
-        stage.classList.remove(&quot;is-moving&quot;);
-        void stage.offsetWidth;
-        stage.classList.add(&quot;is-moving&quot;);
-        updateAll();
-        liveStatus.textContent = action.name + &quot;开始执行。&quot;;
-        if (progressTimer) clearInterval(progressTimer);
-        progressTimer = setInterval(updateProgress, 90);
-        completionTimer = setTimeout(() =&gt; {
-          if (progressTimer) clearInterval(progressTimer);
-          progressTimer = null;
-          completionTimer = null;
-          activeAction = null;
-          stage.classList.remove(&quot;is-moving&quot;);
-          const nextAction = queue.shift();
-          updateAll();
-          if (nextAction) {
-            startAction(nextAction);
-          } else {
-            liveStatus.textContent = &quot;动作已完成，等待新的手势。&quot;;
-          }
-        }, action.duration);
-      }
-
-      root.querySelectorAll(&quot;.gesture-button&quot;).forEach((button) =&gt; {
-        button.addEventListener(&quot;click&quot;, () =&gt; {
-          const action = actions.find((item) =&gt; item.id === button.dataset.gesture);
-          if (!action) return;
-          button.classList.remove(&quot;is-tapped&quot;);
-          void button.offsetWidth;
-          button.classList.add(&quot;is-tapped&quot;);
-          setTimeout(() =&gt; button.classList.remove(&quot;is-tapped&quot;), 600);
-          if (!activeAction) {
-            startAction(action);
-          } else {
-            queue.push(action);
-            updateQueue();
-            liveStatus.textContent = action.name + &quot;已加入第 &quot; + (queue.length + 1) + &quot; 位，当前动作会继续执行。&quot;;
-          }
-        });
-      });
-
-      updateAll();
+      const root = document.getElementById(&quot;gesture-landscape-root&quot;);
+      if (!root) return;
+      const fitScreen = () =&gt; {
+        const scale = Math.min(root.clientWidth / 844, 1);
+        root.style.setProperty(&quot;--ui-scale&quot;, String(scale));
+      };
+      fitScreen();
+      new ResizeObserver(fitScreen).observe(root);
     })();
   &lt;/script&gt;
 &lt;/div&gt;
