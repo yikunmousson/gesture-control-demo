@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>横屏手势指引：侧视深度方案</title>
+<title>横屏手势操作指引</title>
 <style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
 
 </head>
 <body>
-<iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="横屏手势指引：侧视深度方案" data-srcdoc="&lt;!doctype html&gt;
+<iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="横屏手势操作指引" data-srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot; data-visualize-standalone&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
 &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 &lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
-&lt;title&gt;横屏手势指引：侧视深度方案&lt;/title&gt;
+&lt;title&gt;横屏手势操作指引&lt;/title&gt;
 &lt;style&gt;:root {
   color-scheme: light dark;
   background-color: var(
@@ -2629,7 +2629,114 @@ html&gt;body{padding:0}&lt;/style&gt;
     }
   &lt;/style&gt;
 
-  &lt;section data-variant=&quot;侧视深度&quot; aria-label=&quot;侧视深度位移方案&quot;&gt;
+&lt;section data-variant=&quot;屏幕平移&quot; aria-label=&quot;屏幕平面位移方案&quot;&gt;
+    &lt;div class=&quot;gesture-demo&quot; id=&quot;gesture-flat-screen&quot;&gt;
+      &lt;main class=&quot;screen&quot; aria-label=&quot;屏幕平面手势示意&quot;&gt;
+        &lt;section class=&quot;guide&quot; aria-labelledby=&quot;guide-flat-title&quot;&gt;
+          &lt;header class=&quot;guide-heading&quot;&gt;
+            &lt;div class=&quot;heading-copy&quot;&gt;
+              &lt;h1 id=&quot;guide-flat-title&quot;&gt;手势操作指引&lt;/h1&gt;
+              &lt;p class=&quot;subheading&quot;&gt;轻握手机，跟随动画完成动作&lt;/p&gt;
+            &lt;/div&gt;
+            &lt;div class=&quot;mode-label&quot;&gt;&lt;span class=&quot;mode-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;屏幕平移示意&lt;/div&gt;
+          &lt;/header&gt;
+
+          &lt;div class=&quot;gesture-grid&quot; aria-label=&quot;四种手势示意&quot;&gt;
+            &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;lift-flat-title&quot;&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p class=&quot;card-index&quot;&gt;01 / VERTICAL&lt;/p&gt;
+                &lt;h2 id=&quot;lift-flat-title&quot;&gt;手机上抬&lt;/h2&gt;
+                &lt;p class=&quot;card-hint&quot;&gt;手机沿画面向上移动&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;手持手机向上抬起&quot;&gt;
+                &lt;span class=&quot;stage-baseline&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;motion-trail lift-trail&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;motion-arrow lift-arrow&quot; aria-hidden=&quot;true&quot;&gt;↑&lt;/span&gt;
+                &lt;div class=&quot;hand-device lift-device&quot; aria-hidden=&quot;true&quot;&gt;
+                  &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/article&gt;
+
+            &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;press-flat-title&quot;&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p class=&quot;card-index&quot;&gt;02 / VERTICAL&lt;/p&gt;
+                &lt;h2 id=&quot;press-flat-title&quot;&gt;手机下压&lt;/h2&gt;
+                &lt;p class=&quot;card-hint&quot;&gt;手机沿画面向下移动&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;手持手机向下压低&quot;&gt;
+                &lt;span class=&quot;stage-baseline&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;motion-trail press-trail&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;motion-arrow press-arrow&quot; aria-hidden=&quot;true&quot;&gt;↓&lt;/span&gt;
+                &lt;div class=&quot;hand-device press-device&quot; aria-hidden=&quot;true&quot;&gt;
+                  &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/article&gt;
+
+            &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;circle-flat-title&quot;&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p class=&quot;card-index&quot;&gt;03 / HORIZONTAL&lt;/p&gt;
+                &lt;h2 id=&quot;circle-flat-title&quot;&gt;水平画圈&lt;/h2&gt;
+                &lt;p class=&quot;card-hint&quot;&gt;保持水平，沿圆圈移动&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;保持手机水平，沿圆形轨迹移动&quot;&gt;
+                &lt;div class=&quot;orbit-ring&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;hand-device orbit-device&quot; aria-hidden=&quot;true&quot;&gt;
+                  &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;p class=&quot;orbit-caption&quot;&gt;保持手机平稳&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/article&gt;
+
+            &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;flick-flat-title&quot;&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p class=&quot;card-index&quot;&gt;04 / HORIZONTAL&lt;/p&gt;
+                &lt;h2 id=&quot;flick-flat-title&quot;&gt;左右轻挥&lt;/h2&gt;
+                &lt;p class=&quot;card-hint&quot;&gt;手腕带动手机左右轻挥&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;手持手机轻轻向左、向右挥动&quot;&gt;
+                &lt;span class=&quot;flick-left&quot; aria-hidden=&quot;true&quot;&gt;‹&lt;/span&gt;
+                &lt;span class=&quot;flick-right&quot; aria-hidden=&quot;true&quot;&gt;›&lt;/span&gt;
+                &lt;div class=&quot;hand-device flick-device&quot; aria-hidden=&quot;true&quot;&gt;
+                  &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/article&gt;
+          &lt;/div&gt;
+        &lt;/section&gt;
+
+        &lt;aside class=&quot;queue-dialog&quot; role=&quot;dialog&quot; aria-modal=&quot;false&quot; aria-labelledby=&quot;queue-flat-title&quot; aria-describedby=&quot;queue-flat-rule&quot;&gt;
+          &lt;div class=&quot;queue-heading&quot;&gt;
+            &lt;h2 id=&quot;queue-flat-title&quot;&gt;动作队列&lt;/h2&gt;
+            &lt;span class=&quot;queue-state&quot;&gt;&lt;span class=&quot;status-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;待机&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;queue-current&quot;&gt;
+            &lt;p class=&quot;eyebrow&quot;&gt;当前动作&lt;/p&gt;
+            &lt;p class=&quot;current-value&quot;&gt;&lt;span class=&quot;status-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;等待手势&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;queue-divider&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+          &lt;p class=&quot;queue-flow-title&quot;&gt;识别后按顺序处理&lt;/p&gt;
+          &lt;div class=&quot;queue-flow&quot; aria-label=&quot;动作处理顺序&quot;&gt;
+            &lt;div class=&quot;flow-step&quot;&gt;&lt;span class=&quot;flow-number&quot;&gt;01&lt;/span&gt;&lt;span&gt;当前动作继续执行&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;flow-step&quot;&gt;&lt;span class=&quot;flow-number&quot;&gt;02&lt;/span&gt;&lt;span&gt;新手势依序排队&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;flow-step&quot;&gt;&lt;span class=&quot;flow-number&quot;&gt;03&lt;/span&gt;&lt;span&gt;完成后执行下一项&lt;/span&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;p class=&quot;queue-note&quot; id=&quot;queue-flat-rule&quot;&gt;&lt;strong&gt;执行中收到新手势&lt;/strong&gt;会加入队列等待，当前动作不会被打断。&lt;/p&gt;
+        &lt;/aside&gt;
+      &lt;/main&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+&lt;section data-variant=&quot;侧视深度&quot; aria-label=&quot;侧视深度位移方案&quot; hidden&gt;
     &lt;div class=&quot;gesture-demo&quot; id=&quot;gesture-depth-screen&quot;&gt;
       &lt;main class=&quot;screen&quot; aria-label=&quot;侧视深度位移手势示意&quot;&gt;
         &lt;section class=&quot;guide guide-depth&quot; aria-labelledby=&quot;guide-depth-title&quot;&gt;
@@ -2737,113 +2844,6 @@ html&gt;body{padding:0}&lt;/style&gt;
             &lt;div class=&quot;flow-step&quot;&gt;&lt;span class=&quot;flow-number&quot;&gt;03&lt;/span&gt;&lt;span&gt;完成后执行下一项&lt;/span&gt;&lt;/div&gt;
           &lt;/div&gt;
           &lt;p class=&quot;queue-note&quot; id=&quot;queue-depth-rule&quot;&gt;&lt;strong&gt;执行中收到新手势&lt;/strong&gt;会加入队列等待，当前动作不会被打断。&lt;/p&gt;
-        &lt;/aside&gt;
-      &lt;/main&gt;
-    &lt;/div&gt;
-  &lt;/section&gt;
-
-  &lt;section data-variant=&quot;屏幕平移&quot; aria-label=&quot;屏幕平面位移方案&quot; hidden&gt;
-    &lt;div class=&quot;gesture-demo&quot; id=&quot;gesture-flat-screen&quot;&gt;
-      &lt;main class=&quot;screen&quot; aria-label=&quot;屏幕平面手势示意&quot;&gt;
-        &lt;section class=&quot;guide&quot; aria-labelledby=&quot;guide-flat-title&quot;&gt;
-          &lt;header class=&quot;guide-heading&quot;&gt;
-            &lt;div class=&quot;heading-copy&quot;&gt;
-              &lt;h1 id=&quot;guide-flat-title&quot;&gt;手势操作指引&lt;/h1&gt;
-              &lt;p class=&quot;subheading&quot;&gt;轻握手机，跟随动画完成动作&lt;/p&gt;
-            &lt;/div&gt;
-            &lt;div class=&quot;mode-label&quot;&gt;&lt;span class=&quot;mode-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;屏幕平移示意&lt;/div&gt;
-          &lt;/header&gt;
-
-          &lt;div class=&quot;gesture-grid&quot; aria-label=&quot;四种手势示意&quot;&gt;
-            &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;lift-flat-title&quot;&gt;
-              &lt;div class=&quot;card-copy&quot;&gt;
-                &lt;p class=&quot;card-index&quot;&gt;01 / VERTICAL&lt;/p&gt;
-                &lt;h2 id=&quot;lift-flat-title&quot;&gt;手机上抬&lt;/h2&gt;
-                &lt;p class=&quot;card-hint&quot;&gt;手机沿画面向上移动&lt;/p&gt;
-              &lt;/div&gt;
-              &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;手持手机向上抬起&quot;&gt;
-                &lt;span class=&quot;stage-baseline&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                &lt;span class=&quot;motion-trail lift-trail&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                &lt;span class=&quot;motion-arrow lift-arrow&quot; aria-hidden=&quot;true&quot;&gt;↑&lt;/span&gt;
-                &lt;div class=&quot;hand-device lift-device&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
-                  &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
-                  &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/article&gt;
-
-            &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;press-flat-title&quot;&gt;
-              &lt;div class=&quot;card-copy&quot;&gt;
-                &lt;p class=&quot;card-index&quot;&gt;02 / VERTICAL&lt;/p&gt;
-                &lt;h2 id=&quot;press-flat-title&quot;&gt;手机下压&lt;/h2&gt;
-                &lt;p class=&quot;card-hint&quot;&gt;手机沿画面向下移动&lt;/p&gt;
-              &lt;/div&gt;
-              &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;手持手机向下压低&quot;&gt;
-                &lt;span class=&quot;stage-baseline&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                &lt;span class=&quot;motion-trail press-trail&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                &lt;span class=&quot;motion-arrow press-arrow&quot; aria-hidden=&quot;true&quot;&gt;↓&lt;/span&gt;
-                &lt;div class=&quot;hand-device press-device&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
-                  &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
-                  &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/article&gt;
-
-            &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;circle-flat-title&quot;&gt;
-              &lt;div class=&quot;card-copy&quot;&gt;
-                &lt;p class=&quot;card-index&quot;&gt;03 / HORIZONTAL&lt;/p&gt;
-                &lt;h2 id=&quot;circle-flat-title&quot;&gt;水平画圈&lt;/h2&gt;
-                &lt;p class=&quot;card-hint&quot;&gt;保持水平，沿圆圈移动&lt;/p&gt;
-              &lt;/div&gt;
-              &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;保持手机水平，沿圆形轨迹移动&quot;&gt;
-                &lt;div class=&quot;orbit-ring&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
-                &lt;div class=&quot;hand-device orbit-device&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
-                  &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
-                  &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
-                &lt;/div&gt;
-                &lt;p class=&quot;orbit-caption&quot;&gt;保持手机平稳&lt;/p&gt;
-              &lt;/div&gt;
-            &lt;/article&gt;
-
-            &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;flick-flat-title&quot;&gt;
-              &lt;div class=&quot;card-copy&quot;&gt;
-                &lt;p class=&quot;card-index&quot;&gt;04 / HORIZONTAL&lt;/p&gt;
-                &lt;h2 id=&quot;flick-flat-title&quot;&gt;左右轻挥&lt;/h2&gt;
-                &lt;p class=&quot;card-hint&quot;&gt;手腕带动手机左右轻挥&lt;/p&gt;
-              &lt;/div&gt;
-              &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;手持手机轻轻向左、向右挥动&quot;&gt;
-                &lt;span class=&quot;flick-left&quot; aria-hidden=&quot;true&quot;&gt;‹&lt;/span&gt;
-                &lt;span class=&quot;flick-right&quot; aria-hidden=&quot;true&quot;&gt;›&lt;/span&gt;
-                &lt;div class=&quot;hand-device flick-device&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
-                  &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
-                  &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
-                &lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/article&gt;
-          &lt;/div&gt;
-        &lt;/section&gt;
-
-        &lt;aside class=&quot;queue-dialog&quot; role=&quot;dialog&quot; aria-modal=&quot;false&quot; aria-labelledby=&quot;queue-flat-title&quot; aria-describedby=&quot;queue-flat-rule&quot;&gt;
-          &lt;div class=&quot;queue-heading&quot;&gt;
-            &lt;h2 id=&quot;queue-flat-title&quot;&gt;动作队列&lt;/h2&gt;
-            &lt;span class=&quot;queue-state&quot;&gt;&lt;span class=&quot;status-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;待机&lt;/span&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;queue-current&quot;&gt;
-            &lt;p class=&quot;eyebrow&quot;&gt;当前动作&lt;/p&gt;
-            &lt;p class=&quot;current-value&quot;&gt;&lt;span class=&quot;status-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;等待手势&lt;/p&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;queue-divider&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
-          &lt;p class=&quot;queue-flow-title&quot;&gt;识别后按顺序处理&lt;/p&gt;
-          &lt;div class=&quot;queue-flow&quot; aria-label=&quot;动作处理顺序&quot;&gt;
-            &lt;div class=&quot;flow-step&quot;&gt;&lt;span class=&quot;flow-number&quot;&gt;01&lt;/span&gt;&lt;span&gt;当前动作继续执行&lt;/span&gt;&lt;/div&gt;
-            &lt;div class=&quot;flow-step&quot;&gt;&lt;span class=&quot;flow-number&quot;&gt;02&lt;/span&gt;&lt;span&gt;新手势依序排队&lt;/span&gt;&lt;/div&gt;
-            &lt;div class=&quot;flow-step&quot;&gt;&lt;span class=&quot;flow-number&quot;&gt;03&lt;/span&gt;&lt;span&gt;完成后执行下一项&lt;/span&gt;&lt;/div&gt;
-          &lt;/div&gt;
-          &lt;p class=&quot;queue-note&quot; id=&quot;queue-flat-rule&quot;&gt;&lt;strong&gt;执行中收到新手势&lt;/strong&gt;会加入队列等待，当前动作不会被打断。&lt;/p&gt;
         &lt;/aside&gt;
       &lt;/main&gt;
     &lt;/div&gt;
