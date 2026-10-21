@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>横屏手势操作指引</title>
+<title>横屏手势操作方案</title>
 <style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
 
 </head>
 <body>
-<iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="横屏手势操作指引" data-srcdoc="&lt;!doctype html&gt;
+<iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="横屏手势操作方案" data-srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot; data-visualize-standalone&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
 &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 &lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
-&lt;title&gt;横屏手势操作指引&lt;/title&gt;
+&lt;title&gt;横屏手势操作方案&lt;/title&gt;
 &lt;style&gt;:root {
   color-scheme: light dark;
   background-color: var(
@@ -1786,9 +1786,9 @@ html&gt;body{padding:0}&lt;/style&gt;
   syncTheme();
 })();
 &lt;/script&gt;
-&lt;div id=&quot;gesture-landscape-root&quot; lang=&quot;zh-CN&quot; aria-label=&quot;手机横屏手势操作指引&quot;&gt;
+&lt;div id=&quot;gesture-alternatives-root&quot; class=&quot;viz-carousel viz-dotted-background&quot; lang=&quot;zh-CN&quot; aria-label=&quot;横屏手势界面方案&quot; data-previous-label=&quot;上一个方案&quot; data-next-label=&quot;下一个方案&quot;&gt;
   &lt;style&gt;
-    #gesture-landscape-root {
+    #gesture-alternatives-root .gesture-demo {
       --ui-bg: light-dark(#f0f3ed, #18231f);
       --ui-surface: light-dark(#ffffff, #24322c);
       --ui-surface-soft: light-dark(#f7f9f5, #2b3b34);
@@ -1805,13 +1805,14 @@ html&gt;body{padding:0}&lt;/style&gt;
       position: relative;
       overflow: hidden;
       color-scheme: light dark;
+      color: var(--ui-text);
       font-family: -apple-system, BlinkMacSystemFont, &quot;Segoe UI&quot;, &quot;PingFang SC&quot;, &quot;Hiragino Sans GB&quot;, &quot;Microsoft YaHei&quot;, sans-serif;
       -webkit-font-smoothing: antialiased;
     }
 
-    #gesture-landscape-root * { box-sizing: border-box; }
+    #gesture-alternatives-root .gesture-demo * { box-sizing: border-box; }
 
-    #gesture-landscape-root .screen {
+    #gesture-alternatives-root .screen {
       width: 844px;
       height: 390px;
       transform: scale(var(--ui-scale, 1));
@@ -1820,20 +1821,19 @@ html&gt;body{padding:0}&lt;/style&gt;
       background:
         radial-gradient(ellipse at 18% 5%, color-mix(in srgb, var(--ui-accent) 8%, transparent), transparent 38%),
         var(--ui-bg);
-      color: var(--ui-text);
       display: grid;
       grid-template-columns: minmax(0, 1fr) 200px;
       gap: 14px;
     }
 
-    #gesture-landscape-root .guide {
+    #gesture-alternatives-root .guide {
       min-width: 0;
       display: grid;
       grid-template-rows: 43px minmax(0, 1fr);
       gap: 10px;
     }
 
-    #gesture-landscape-root .guide-heading {
+    #gesture-alternatives-root .guide-heading {
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -1841,19 +1841,19 @@ html&gt;body{padding:0}&lt;/style&gt;
       padding: 0 2px;
     }
 
-    #gesture-landscape-root .heading-copy { min-width: 0; }
-    #gesture-landscape-root h1,
-    #gesture-landscape-root h2,
-    #gesture-landscape-root p { margin: 0; }
+    #gesture-alternatives-root .heading-copy { min-width: 0; }
+    #gesture-alternatives-root h1,
+    #gesture-alternatives-root h2,
+    #gesture-alternatives-root p { margin: 0; }
 
-    #gesture-landscape-root h1 {
+    #gesture-alternatives-root h1 {
       font-size: 19px;
       line-height: 1.2;
       letter-spacing: .01em;
-      font-weight: 600;
+      font-weight: 500;
     }
 
-    #gesture-landscape-root .subheading {
+    #gesture-alternatives-root .subheading {
       margin-top: 3px;
       color: var(--ui-muted);
       font-size: 12px;
@@ -1861,7 +1861,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       letter-spacing: .015em;
     }
 
-    #gesture-landscape-root .mode-label {
+    #gesture-alternatives-root .mode-label {
       display: inline-flex;
       align-items: center;
       gap: 7px;
@@ -1874,8 +1874,8 @@ html&gt;body{padding:0}&lt;/style&gt;
       white-space: nowrap;
     }
 
-    #gesture-landscape-root .mode-dot,
-    #gesture-landscape-root .status-dot {
+    #gesture-alternatives-root .mode-dot,
+    #gesture-alternatives-root .status-dot {
       display: inline-block;
       width: 7px;
       height: 7px;
@@ -1884,7 +1884,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       background: var(--ui-accent);
     }
 
-    #gesture-landscape-root .gesture-grid {
+    #gesture-alternatives-root .gesture-grid {
       min-height: 0;
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -1892,7 +1892,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       gap: 10px;
     }
 
-    #gesture-landscape-root .gesture-card {
+    #gesture-alternatives-root .gesture-card {
       min-width: 0;
       min-height: 0;
       position: relative;
@@ -1908,27 +1908,26 @@ html&gt;body{padding:0}&lt;/style&gt;
       box-shadow: 0 4px 14px color-mix(in srgb, var(--ui-text) 4%, transparent);
     }
 
-    #gesture-landscape-root .card-copy { align-self: stretch; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
-
-    #gesture-landscape-root .card-index {
+    #gesture-alternatives-root .card-copy { align-self: stretch; display: flex; flex-direction: column; justify-content: center; min-width: 0; }
+    #gesture-alternatives-root .card-index {
       margin-bottom: 6px;
       color: var(--ui-accent);
-      font-size: 10px;
+      font-size: 11px;
       line-height: 1;
       letter-spacing: .12em;
       font-variant-numeric: tabular-nums;
-      font-weight: 600;
+      font-weight: 500;
     }
 
-    #gesture-landscape-root h2 {
+    #gesture-alternatives-root .gesture-card h2 {
       font-size: 16px;
       line-height: 1.2;
       letter-spacing: .01em;
-      font-weight: 600;
+      font-weight: 500;
       white-space: nowrap;
     }
 
-    #gesture-landscape-root .card-hint {
+    #gesture-alternatives-root .card-hint {
       max-width: 120px;
       margin-top: 6px;
       color: var(--ui-muted);
@@ -1936,7 +1935,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       line-height: 1.45;
     }
 
-    #gesture-landscape-root .demo-stage {
+    #gesture-alternatives-root .demo-stage {
       height: 100%;
       min-height: 115px;
       position: relative;
@@ -1949,7 +1948,7 @@ html&gt;body{padding:0}&lt;/style&gt;
         var(--ui-surface-soft);
     }
 
-    #gesture-landscape-root .stage-baseline {
+    #gesture-alternatives-root .stage-baseline {
       position: absolute;
       left: 14%;
       right: 14%;
@@ -1958,7 +1957,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       background: color-mix(in srgb, var(--ui-muted) 22%, transparent);
     }
 
-    #gesture-landscape-root .hand-device {
+    #gesture-alternatives-root .hand-device {
       position: relative;
       z-index: 2;
       width: 77px;
@@ -1967,7 +1966,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       place-items: center;
     }
 
-    #gesture-landscape-root .wrist {
+    #gesture-alternatives-root .wrist {
       position: absolute;
       left: 30px;
       top: 32px;
@@ -1978,7 +1977,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       transform: rotate(-7deg);
     }
 
-    #gesture-landscape-root .palm {
+    #gesture-alternatives-root .palm {
       position: absolute;
       left: 19px;
       top: 20px;
@@ -1989,7 +1988,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       transform: rotate(-5deg);
     }
 
-    #gesture-landscape-root .finger {
+    #gesture-alternatives-root .finger {
       position: absolute;
       top: 16px;
       width: 7px;
@@ -1998,10 +1997,10 @@ html&gt;body{padding:0}&lt;/style&gt;
       background: var(--ui-skin);
     }
 
-    #gesture-landscape-root .finger-one { left: 21px; transform: rotate(-7deg); }
-    #gesture-landscape-root .finger-two { left: 30px; top: 14px; height: 20px; }
-    #gesture-landscape-root .finger-three { left: 39px; top: 15px; height: 19px; transform: rotate(4deg); }
-    #gesture-landscape-root .thumb {
+    #gesture-alternatives-root .finger-one { left: 21px; transform: rotate(-7deg); }
+    #gesture-alternatives-root .finger-two { left: 30px; top: 14px; height: 20px; }
+    #gesture-alternatives-root .finger-three { left: 39px; top: 15px; height: 19px; transform: rotate(4deg); }
+    #gesture-alternatives-root .thumb {
       position: absolute;
       left: 51px;
       top: 28px;
@@ -2012,7 +2011,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       transform: rotate(28deg);
     }
 
-    #gesture-landscape-root .phone {
+    #gesture-alternatives-root .phone {
       position: absolute;
       z-index: 3;
       left: 12px;
@@ -2026,7 +2025,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       transform: rotate(-4deg);
     }
 
-    #gesture-landscape-root .phone::before {
+    #gesture-alternatives-root .phone::before {
       content: &quot;&quot;;
       position: absolute;
       inset: 3px 4px;
@@ -2034,7 +2033,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       background: linear-gradient(145deg, color-mix(in srgb, var(--ui-accent) 26%, var(--ui-surface)), color-mix(in srgb, var(--ui-accent) 8%, var(--ui-surface)));
     }
 
-    #gesture-landscape-root .phone::after {
+    #gesture-alternatives-root .phone::after {
       content: &quot;&quot;;
       position: absolute;
       top: 12px;
@@ -2045,7 +2044,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       background: color-mix(in srgb, var(--ui-phone) 68%, var(--ui-surface));
     }
 
-    #gesture-landscape-root .motion-arrow {
+    #gesture-alternatives-root .motion-arrow {
       position: absolute;
       z-index: 1;
       color: var(--ui-accent);
@@ -2054,12 +2053,12 @@ html&gt;body{padding:0}&lt;/style&gt;
       font-weight: 500;
     }
 
-    #gesture-landscape-root .lift-arrow { right: 23px; top: 20px; animation: arrowLift 1.8s ease-in-out infinite; }
-    #gesture-landscape-root .press-arrow { right: 23px; top: 20px; animation: arrowPress 1.8s ease-in-out infinite; }
-    #gesture-landscape-root .lift-device { animation: phoneLift 2.3s ease-in-out infinite; }
-    #gesture-landscape-root .press-device { animation: phonePress 2.3s ease-in-out infinite; }
+    #gesture-alternatives-root .lift-arrow { right: 23px; top: 20px; animation: arrowLift 1.8s ease-in-out infinite; }
+    #gesture-alternatives-root .press-arrow { right: 23px; top: 20px; animation: arrowPress 1.8s ease-in-out infinite; }
+    #gesture-alternatives-root .lift-device { animation: phoneLift 2.3s ease-in-out infinite; }
+    #gesture-alternatives-root .press-device { animation: phonePress 2.3s ease-in-out infinite; }
 
-    #gesture-landscape-root .motion-trail {
+    #gesture-alternatives-root .motion-trail {
       position: absolute;
       z-index: 1;
       left: 50%;
@@ -2069,10 +2068,10 @@ html&gt;body{padding:0}&lt;/style&gt;
       transform: translateX(-50%);
     }
 
-    #gesture-landscape-root .lift-trail { top: 17px; }
-    #gesture-landscape-root .press-trail { bottom: 17px; }
+    #gesture-alternatives-root .lift-trail { top: 17px; }
+    #gesture-alternatives-root .press-trail { bottom: 17px; }
 
-    #gesture-landscape-root .orbit-ring {
+    #gesture-alternatives-root .orbit-ring {
       position: absolute;
       width: 91px;
       height: 64px;
@@ -2081,7 +2080,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       animation: orbitSpin 4.8s linear infinite;
     }
 
-    #gesture-landscape-root .orbit-ring::after {
+    #gesture-alternatives-root .orbit-ring::after {
       content: &quot;&quot;;
       position: absolute;
       right: 2px;
@@ -2093,7 +2092,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       transform: rotate(28deg);
     }
 
-    #gesture-landscape-root .orbit-device {
+    #gesture-alternatives-root .orbit-device {
       position: absolute;
       left: calc(50% + 39px);
       top: 50%;
@@ -2101,17 +2100,17 @@ html&gt;body{padding:0}&lt;/style&gt;
       animation: orbitCounter 4.8s linear infinite;
     }
 
-    #gesture-landscape-root .orbit-caption {
+    #gesture-alternatives-root .orbit-caption {
       position: absolute;
       bottom: 8px;
       color: var(--ui-muted);
-      font-size: 10px;
+      font-size: 11px;
       line-height: 1;
       letter-spacing: .02em;
     }
 
-    #gesture-landscape-root .flick-left,
-    #gesture-landscape-root .flick-right {
+    #gesture-alternatives-root .flick-left,
+    #gesture-alternatives-root .flick-right {
       position: absolute;
       top: 34px;
       color: color-mix(in srgb, var(--ui-accent) 76%, transparent);
@@ -2119,11 +2118,105 @@ html&gt;body{padding:0}&lt;/style&gt;
       line-height: 1;
     }
 
-    #gesture-landscape-root .flick-left { left: 15px; animation: flickHintLeft 1.5s ease-in-out infinite; }
-    #gesture-landscape-root .flick-right { right: 15px; animation: flickHintRight 1.5s ease-in-out infinite; }
-    #gesture-landscape-root .flick-device { animation: phoneFlick 1.5s ease-in-out infinite; }
+    #gesture-alternatives-root .flick-left { left: 15px; animation: flickHintLeft 1.5s ease-in-out infinite; }
+    #gesture-alternatives-root .flick-right { right: 15px; animation: flickHintRight 1.5s ease-in-out infinite; }
+    #gesture-alternatives-root .flick-device { animation: phoneFlick 1.5s ease-in-out infinite; }
 
-    #gesture-landscape-root .queue-dialog {
+    /* The alternate treatment adds a visible depth plane and perspective. */
+    #gesture-alternatives-root .depth-stage {
+      perspective: 460px;
+      perspective-origin: 50% 48%;
+      transform-style: preserve-3d;
+      background:
+        radial-gradient(ellipse at 55% 58%, color-mix(in srgb, var(--ui-accent) 10%, transparent), transparent 68%),
+        var(--ui-surface-soft);
+    }
+
+    #gesture-alternatives-root .depth-grid {
+      position: absolute;
+      inset: 34% 4% 3%;
+      opacity: .68;
+      transform: perspective(150px) rotateX(58deg);
+      transform-origin: 50% 0;
+      background-image:
+        linear-gradient(color-mix(in srgb, var(--ui-accent) 16%, transparent) 1px, transparent 1px),
+        linear-gradient(90deg, color-mix(in srgb, var(--ui-accent) 16%, transparent) 1px, transparent 1px);
+      background-size: 16px 12px;
+    }
+
+    #gesture-alternatives-root .depth-axis {
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      top: 17%;
+      bottom: 24%;
+      width: 1px;
+      background: linear-gradient(to bottom, color-mix(in srgb, var(--ui-accent) 16%, transparent), color-mix(in srgb, var(--ui-accent) 78%, transparent));
+      transform: translateX(-50%);
+    }
+
+    #gesture-alternatives-root .depth-axis::before,
+    #gesture-alternatives-root .depth-axis::after {
+      content: &quot;&quot;;
+      position: absolute;
+      left: -3px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+    }
+
+    #gesture-alternatives-root .depth-axis::before { top: 0; background: var(--ui-surface-soft); border: 1px solid var(--ui-accent); }
+    #gesture-alternatives-root .depth-axis::after { bottom: 0; background: var(--ui-accent); }
+
+    #gesture-alternatives-root .depth-endpoint {
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      display: flex;
+      align-items: center;
+      gap: 4px;
+      color: var(--ui-muted);
+      font-size: 11px;
+      line-height: 1;
+      letter-spacing: .04em;
+      transform: translateX(-50%);
+      white-space: nowrap;
+    }
+
+    #gesture-alternatives-root .depth-far { top: 8px; }
+    #gesture-alternatives-root .depth-near { bottom: 8px; }
+    #gesture-alternatives-root .depth-endpoint strong { color: var(--ui-accent); font-size: 11px; font-weight: 500; }
+
+    #gesture-alternatives-root .depth-ghost {
+      position: absolute;
+      left: 50%;
+      border: 1px dashed color-mix(in srgb, var(--ui-accent) 46%, transparent);
+      border-radius: 6px;
+      transform: translateX(-50%) rotateX(22deg);
+    }
+
+    #gesture-alternatives-root .depth-ghost-far { top: 20px; width: 33px; height: 21px; opacity: .4; }
+    #gesture-alternatives-root .depth-ghost-near { bottom: 23px; width: 49px; height: 31px; opacity: .24; }
+
+    #gesture-alternatives-root .depth-shadow {
+      position: absolute;
+      z-index: 1;
+      left: 50%;
+      bottom: 23px;
+      width: 42px;
+      height: 7px;
+      border-radius: 50%;
+      background: color-mix(in srgb, var(--ui-text) 24%, transparent);
+      filter: blur(2px);
+      transform: translateX(-50%) scale(.7);
+    }
+
+    #gesture-alternatives-root .depth-in-device { animation: moveTowardView 2.8s ease-in-out infinite alternate; }
+    #gesture-alternatives-root .depth-away-device { animation: moveAwayView 2.8s ease-in-out infinite alternate; }
+    #gesture-alternatives-root .depth-in-shadow { animation: shadowTowardView 2.8s ease-in-out infinite alternate; }
+    #gesture-alternatives-root .depth-away-shadow { animation: shadowAwayView 2.8s ease-in-out infinite alternate; }
+
+    #gesture-alternatives-root .queue-dialog {
       min-width: 0;
       height: 100%;
       padding: 16px 14px 13px;
@@ -2135,16 +2228,16 @@ html&gt;body{padding:0}&lt;/style&gt;
       box-shadow: 0 7px 22px color-mix(in srgb, var(--ui-text) 5%, transparent);
     }
 
-    #gesture-landscape-root .queue-heading {
+    #gesture-alternatives-root .queue-heading {
       display: flex;
       align-items: center;
       justify-content: space-between;
       gap: 5px;
     }
 
-    #gesture-landscape-root .queue-heading h2 { font-size: 15px; line-height: 1.25; }
+    #gesture-alternatives-root .queue-heading h2 { font-size: 15px; line-height: 1.25; }
 
-    #gesture-landscape-root .queue-state {
+    #gesture-alternatives-root .queue-state {
       display: inline-flex;
       align-items: center;
       gap: 5px;
@@ -2152,62 +2245,62 @@ html&gt;body{padding:0}&lt;/style&gt;
       border-radius: 999px;
       background: var(--ui-accent-soft);
       color: var(--ui-accent);
-      font-size: 10px;
+      font-size: 11px;
       line-height: 1;
       white-space: nowrap;
     }
 
-    #gesture-landscape-root .queue-current {
+    #gesture-alternatives-root .queue-current {
       margin-top: 18px;
       padding: 12px 11px;
       border-radius: 12px;
       background: var(--ui-surface-soft);
     }
 
-    #gesture-landscape-root .eyebrow {
+    #gesture-alternatives-root .eyebrow {
       color: var(--ui-muted);
-      font-size: 10px;
+      font-size: 11px;
       line-height: 1.2;
       letter-spacing: .04em;
     }
 
-    #gesture-landscape-root .current-value {
+    #gesture-alternatives-root .current-value {
       display: flex;
       align-items: center;
       gap: 7px;
       margin-top: 8px;
       font-size: 13px;
       line-height: 1.2;
-      font-weight: 600;
+      font-weight: 500;
     }
 
-    #gesture-landscape-root .current-value .status-dot {
+    #gesture-alternatives-root .current-value .status-dot {
       width: 8px;
       height: 8px;
       background: color-mix(in srgb, var(--ui-muted) 48%, transparent);
     }
 
-    #gesture-landscape-root .queue-divider {
+    #gesture-alternatives-root .queue-divider {
       height: 1px;
       margin: 16px 1px 13px;
       background: var(--ui-line);
     }
 
-    #gesture-landscape-root .queue-flow-title {
+    #gesture-alternatives-root .queue-flow-title {
       color: var(--ui-text);
       font-size: 11px;
       line-height: 1.25;
-      font-weight: 600;
+      font-weight: 500;
     }
 
-    #gesture-landscape-root .queue-flow {
+    #gesture-alternatives-root .queue-flow {
       position: relative;
       margin-top: 11px;
       display: grid;
       gap: 9px;
     }
 
-    #gesture-landscape-root .queue-flow::before {
+    #gesture-alternatives-root .queue-flow::before {
       content: &quot;&quot;;
       position: absolute;
       left: 11px;
@@ -2217,7 +2310,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       background: var(--ui-line);
     }
 
-    #gesture-landscape-root .flow-step {
+    #gesture-alternatives-root .flow-step {
       position: relative;
       display: grid;
       grid-template-columns: 22px minmax(0, 1fr);
@@ -2229,7 +2322,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       line-height: 1.25;
     }
 
-    #gesture-landscape-root .flow-number {
+    #gesture-alternatives-root .flow-number {
       width: 22px;
       height: 22px;
       display: grid;
@@ -2238,12 +2331,12 @@ html&gt;body{padding:0}&lt;/style&gt;
       border-radius: 50%;
       background: var(--ui-surface);
       color: var(--ui-accent);
-      font-size: 10px;
+      font-size: 11px;
       line-height: 1;
       font-variant-numeric: tabular-nums;
     }
 
-    #gesture-landscape-root .queue-note {
+    #gesture-alternatives-root .queue-note {
       margin-top: auto;
       padding: 10px 10px 9px;
       border-left: 2px solid var(--ui-accent);
@@ -2254,7 +2347,7 @@ html&gt;body{padding:0}&lt;/style&gt;
       line-height: 1.55;
     }
 
-    #gesture-landscape-root .queue-note strong { font-weight: 600; }
+    #gesture-alternatives-root .queue-note strong { font-weight: 500; }
 
     @keyframes phoneLift {
       0%, 100% { transform: translateY(8px); }
@@ -2286,135 +2379,273 @@ html&gt;body{padding:0}&lt;/style&gt;
       0%, 100% { opacity: 1; transform: translateX(3px); }
       50% { opacity: .38; transform: translateX(-4px); }
     }
+    @keyframes moveTowardView {
+      from { transform: translate3d(0, -6px, -42px) scale(.72) rotateX(18deg); }
+      to { transform: translate3d(0, 9px, 42px) scale(1.16) rotateX(18deg); }
+    }
+    @keyframes moveAwayView {
+      from { transform: translate3d(0, 9px, 42px) scale(1.16) rotateX(18deg); }
+      to { transform: translate3d(0, -6px, -42px) scale(.72) rotateX(18deg); }
+    }
+    @keyframes shadowTowardView {
+      from { transform: translate(-50%, -5px) scale(.62); opacity: .3; filter: blur(1px); }
+      to { transform: translate(-50%, 3px) scale(1.24); opacity: .16; filter: blur(4px); }
+    }
+    @keyframes shadowAwayView {
+      from { transform: translate(-50%, 3px) scale(1.24); opacity: .16; filter: blur(4px); }
+      to { transform: translate(-50%, -5px) scale(.62); opacity: .3; filter: blur(1px); }
+    }
 
     @media (prefers-reduced-motion: reduce) {
-      #gesture-landscape-root *,
-      #gesture-landscape-root *::before,
-      #gesture-landscape-root *::after { animation: none !important; }
-      #gesture-landscape-root .lift-device { transform: translateY(-5px); }
-      #gesture-landscape-root .press-device { transform: translateY(5px); }
-      #gesture-landscape-root .lift-arrow,
-      #gesture-landscape-root .press-arrow { opacity: 1; }
-      #gesture-landscape-root .flick-device { transform: translateX(0); }
+      #gesture-alternatives-root .gesture-demo *,
+      #gesture-alternatives-root .gesture-demo *::before,
+      #gesture-alternatives-root .gesture-demo *::after { animation: none !important; }
+      #gesture-alternatives-root .lift-device { transform: translateY(-5px); }
+      #gesture-alternatives-root .press-device { transform: translateY(5px); }
+      #gesture-alternatives-root .lift-arrow,
+      #gesture-alternatives-root .press-arrow { opacity: 1; }
+      #gesture-alternatives-root .flick-device { transform: translateX(0); }
+      #gesture-alternatives-root .depth-in-device { transform: translate3d(0, 9px, 42px) scale(1.16) rotateX(18deg); }
+      #gesture-alternatives-root .depth-away-device { transform: translate3d(0, -6px, -42px) scale(.72) rotateX(18deg); }
     }
   &lt;/style&gt;
 
-  &lt;main class=&quot;screen&quot; aria-label=&quot;手势操作示意&quot;&gt;
-    &lt;section class=&quot;guide&quot; aria-labelledby=&quot;gesture-guide-title&quot;&gt;
-      &lt;header class=&quot;guide-heading&quot;&gt;
-        &lt;div class=&quot;heading-copy&quot;&gt;
-          &lt;h1 id=&quot;gesture-guide-title&quot;&gt;手势操作指引&lt;/h1&gt;
-          &lt;p class=&quot;subheading&quot;&gt;轻握手机，跟随动画完成动作&lt;/p&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;mode-label&quot;&gt;&lt;span class=&quot;mode-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;手机横屏&lt;/div&gt;
-      &lt;/header&gt;
-
-      &lt;div class=&quot;gesture-grid&quot; aria-label=&quot;四种手势示意&quot;&gt;
-        &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;gesture-lift-title&quot;&gt;
-          &lt;div class=&quot;card-copy&quot;&gt;
-            &lt;p class=&quot;card-index&quot;&gt;01 / VERTICAL&lt;/p&gt;
-            &lt;h2 id=&quot;gesture-lift-title&quot;&gt;手机上抬&lt;/h2&gt;
-            &lt;p class=&quot;card-hint&quot;&gt;手持手机，平稳向上抬&lt;/p&gt;
-          &lt;/div&gt;
-          &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;手持手机向上抬起&quot;&gt;
-            &lt;span class=&quot;stage-baseline&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-            &lt;span class=&quot;motion-trail lift-trail&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-            &lt;span class=&quot;motion-arrow lift-arrow&quot; aria-hidden=&quot;true&quot;&gt;↑&lt;/span&gt;
-            &lt;div class=&quot;hand-device lift-device&quot; aria-hidden=&quot;true&quot;&gt;
-              &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
-              &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
-              &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+  &lt;section data-variant=&quot;Z轴进退&quot; aria-label=&quot;Z轴深度位移方案&quot;&gt;
+    &lt;div class=&quot;gesture-demo&quot; id=&quot;gesture-depth-screen&quot;&gt;
+      &lt;main class=&quot;screen&quot; aria-label=&quot;Z轴深度位移手势示意&quot;&gt;
+        &lt;section class=&quot;guide&quot; aria-labelledby=&quot;guide-depth-title&quot;&gt;
+          &lt;header class=&quot;guide-heading&quot;&gt;
+            &lt;div class=&quot;heading-copy&quot;&gt;
+              &lt;h1 id=&quot;guide-depth-title&quot;&gt;手势操作指引&lt;/h1&gt;
+              &lt;p class=&quot;subheading&quot;&gt;轻握手机，跟随动画完成动作&lt;/p&gt;
             &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/article&gt;
+            &lt;div class=&quot;mode-label&quot;&gt;&lt;span class=&quot;mode-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;Z 轴进退示意&lt;/div&gt;
+          &lt;/header&gt;
 
-        &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;gesture-press-title&quot;&gt;
-          &lt;div class=&quot;card-copy&quot;&gt;
-            &lt;p class=&quot;card-index&quot;&gt;02 / VERTICAL&lt;/p&gt;
-            &lt;h2 id=&quot;gesture-press-title&quot;&gt;手机下压&lt;/h2&gt;
-            &lt;p class=&quot;card-hint&quot;&gt;手持手机，轻缓向下压&lt;/p&gt;
+          &lt;div class=&quot;gesture-grid&quot; aria-label=&quot;四种手势示意&quot;&gt;
+            &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;lift-depth-title&quot;&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p class=&quot;card-index&quot;&gt;01 / Z-AXIS&lt;/p&gt;
+                &lt;h2 id=&quot;lift-depth-title&quot;&gt;手机上抬&lt;/h2&gt;
+                &lt;p class=&quot;card-hint&quot;&gt;沿 Z 轴，朝视线靠近&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;demo-stage depth-stage&quot; role=&quot;img&quot; aria-label=&quot;手机沿 Z 轴从远处靠近视线，逐渐变大&quot;&gt;
+                &lt;span class=&quot;depth-grid&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;depth-axis&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;depth-ghost depth-ghost-far&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;depth-ghost depth-ghost-near&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;depth-endpoint depth-far&quot; aria-hidden=&quot;true&quot;&gt;远处 &lt;strong&gt;· Z&lt;/strong&gt;&lt;/span&gt;
+                &lt;span class=&quot;depth-endpoint depth-near&quot; aria-hidden=&quot;true&quot;&gt;&lt;strong&gt;近处 · Z&lt;/strong&gt;&lt;/span&gt;
+                &lt;span class=&quot;depth-shadow depth-in-shadow&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;div class=&quot;hand-device depth-in-device&quot; aria-hidden=&quot;true&quot;&gt;
+                  &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/article&gt;
+
+            &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;press-depth-title&quot;&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p class=&quot;card-index&quot;&gt;02 / Z-AXIS&lt;/p&gt;
+                &lt;h2 id=&quot;press-depth-title&quot;&gt;手机下压&lt;/h2&gt;
+                &lt;p class=&quot;card-hint&quot;&gt;沿 Z 轴，远离视线移动&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;demo-stage depth-stage&quot; role=&quot;img&quot; aria-label=&quot;手机沿 Z 轴从近处退向远处，逐渐变小&quot;&gt;
+                &lt;span class=&quot;depth-grid&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;depth-axis&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;depth-ghost depth-ghost-far&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;depth-ghost depth-ghost-near&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;depth-endpoint depth-far&quot; aria-hidden=&quot;true&quot;&gt;远处 &lt;strong&gt;· Z&lt;/strong&gt;&lt;/span&gt;
+                &lt;span class=&quot;depth-endpoint depth-near&quot; aria-hidden=&quot;true&quot;&gt;&lt;strong&gt;近处 · Z&lt;/strong&gt;&lt;/span&gt;
+                &lt;span class=&quot;depth-shadow depth-away-shadow&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;div class=&quot;hand-device depth-away-device&quot; aria-hidden=&quot;true&quot;&gt;
+                  &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/article&gt;
+
+            &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;circle-depth-title&quot;&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p class=&quot;card-index&quot;&gt;03 / HORIZONTAL&lt;/p&gt;
+                &lt;h2 id=&quot;circle-depth-title&quot;&gt;水平画圈&lt;/h2&gt;
+                &lt;p class=&quot;card-hint&quot;&gt;保持水平，沿圆圈移动&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;保持手机水平，沿圆形轨迹移动&quot;&gt;
+                &lt;div class=&quot;orbit-ring&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;hand-device orbit-device&quot; aria-hidden=&quot;true&quot;&gt;
+                  &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;p class=&quot;orbit-caption&quot;&gt;保持手机平稳&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/article&gt;
+
+            &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;flick-depth-title&quot;&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p class=&quot;card-index&quot;&gt;04 / HORIZONTAL&lt;/p&gt;
+                &lt;h2 id=&quot;flick-depth-title&quot;&gt;左右轻挥&lt;/h2&gt;
+                &lt;p class=&quot;card-hint&quot;&gt;手腕带动手机左右轻挥&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;手持手机轻轻向左、向右挥动&quot;&gt;
+                &lt;span class=&quot;flick-left&quot; aria-hidden=&quot;true&quot;&gt;‹&lt;/span&gt;
+                &lt;span class=&quot;flick-right&quot; aria-hidden=&quot;true&quot;&gt;›&lt;/span&gt;
+                &lt;div class=&quot;hand-device flick-device&quot; aria-hidden=&quot;true&quot;&gt;
+                  &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/article&gt;
           &lt;/div&gt;
-          &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;手持手机向下压低&quot;&gt;
-            &lt;span class=&quot;stage-baseline&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-            &lt;span class=&quot;motion-trail press-trail&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-            &lt;span class=&quot;motion-arrow press-arrow&quot; aria-hidden=&quot;true&quot;&gt;↓&lt;/span&gt;
-            &lt;div class=&quot;hand-device press-device&quot; aria-hidden=&quot;true&quot;&gt;
-              &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
-              &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
-              &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+        &lt;/section&gt;
+
+        &lt;aside class=&quot;queue-dialog&quot; role=&quot;dialog&quot; aria-modal=&quot;false&quot; aria-labelledby=&quot;queue-depth-title&quot; aria-describedby=&quot;queue-depth-rule&quot;&gt;
+          &lt;div class=&quot;queue-heading&quot;&gt;
+            &lt;h2 id=&quot;queue-depth-title&quot;&gt;动作队列&lt;/h2&gt;
+            &lt;span class=&quot;queue-state&quot;&gt;&lt;span class=&quot;status-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;待机&lt;/span&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;queue-current&quot;&gt;
+            &lt;p class=&quot;eyebrow&quot;&gt;当前动作&lt;/p&gt;
+            &lt;p class=&quot;current-value&quot;&gt;&lt;span class=&quot;status-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;等待手势&lt;/p&gt;
+          &lt;/div&gt;
+          &lt;div class=&quot;queue-divider&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+          &lt;p class=&quot;queue-flow-title&quot;&gt;识别后按顺序处理&lt;/p&gt;
+          &lt;div class=&quot;queue-flow&quot; aria-label=&quot;动作处理顺序&quot;&gt;
+            &lt;div class=&quot;flow-step&quot;&gt;&lt;span class=&quot;flow-number&quot;&gt;01&lt;/span&gt;&lt;span&gt;当前动作继续执行&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;flow-step&quot;&gt;&lt;span class=&quot;flow-number&quot;&gt;02&lt;/span&gt;&lt;span&gt;新手势依序排队&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;flow-step&quot;&gt;&lt;span class=&quot;flow-number&quot;&gt;03&lt;/span&gt;&lt;span&gt;完成后执行下一项&lt;/span&gt;&lt;/div&gt;
+          &lt;/div&gt;
+          &lt;p class=&quot;queue-note&quot; id=&quot;queue-depth-rule&quot;&gt;&lt;strong&gt;执行中收到新手势&lt;/strong&gt;会加入队列等待，当前动作不会被打断。&lt;/p&gt;
+        &lt;/aside&gt;
+      &lt;/main&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
+
+  &lt;section data-variant=&quot;屏幕平移&quot; aria-label=&quot;屏幕平面位移方案&quot; hidden&gt;
+    &lt;div class=&quot;gesture-demo&quot; id=&quot;gesture-flat-screen&quot;&gt;
+      &lt;main class=&quot;screen&quot; aria-label=&quot;屏幕平面手势示意&quot;&gt;
+        &lt;section class=&quot;guide&quot; aria-labelledby=&quot;guide-flat-title&quot;&gt;
+          &lt;header class=&quot;guide-heading&quot;&gt;
+            &lt;div class=&quot;heading-copy&quot;&gt;
+              &lt;h1 id=&quot;guide-flat-title&quot;&gt;手势操作指引&lt;/h1&gt;
+              &lt;p class=&quot;subheading&quot;&gt;轻握手机，跟随动画完成动作&lt;/p&gt;
             &lt;/div&gt;
+            &lt;div class=&quot;mode-label&quot;&gt;&lt;span class=&quot;mode-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;屏幕平移示意&lt;/div&gt;
+          &lt;/header&gt;
+
+          &lt;div class=&quot;gesture-grid&quot; aria-label=&quot;四种手势示意&quot;&gt;
+            &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;lift-flat-title&quot;&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p class=&quot;card-index&quot;&gt;01 / VERTICAL&lt;/p&gt;
+                &lt;h2 id=&quot;lift-flat-title&quot;&gt;手机上抬&lt;/h2&gt;
+                &lt;p class=&quot;card-hint&quot;&gt;手机沿画面向上移动&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;手持手机向上抬起&quot;&gt;
+                &lt;span class=&quot;stage-baseline&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;motion-trail lift-trail&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;motion-arrow lift-arrow&quot; aria-hidden=&quot;true&quot;&gt;↑&lt;/span&gt;
+                &lt;div class=&quot;hand-device lift-device&quot; aria-hidden=&quot;true&quot;&gt;
+                  &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/article&gt;
+
+            &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;press-flat-title&quot;&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p class=&quot;card-index&quot;&gt;02 / VERTICAL&lt;/p&gt;
+                &lt;h2 id=&quot;press-flat-title&quot;&gt;手机下压&lt;/h2&gt;
+                &lt;p class=&quot;card-hint&quot;&gt;手机沿画面向下移动&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;手持手机向下压低&quot;&gt;
+                &lt;span class=&quot;stage-baseline&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;motion-trail press-trail&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                &lt;span class=&quot;motion-arrow press-arrow&quot; aria-hidden=&quot;true&quot;&gt;↓&lt;/span&gt;
+                &lt;div class=&quot;hand-device press-device&quot; aria-hidden=&quot;true&quot;&gt;
+                  &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/article&gt;
+
+            &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;circle-flat-title&quot;&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p class=&quot;card-index&quot;&gt;03 / HORIZONTAL&lt;/p&gt;
+                &lt;h2 id=&quot;circle-flat-title&quot;&gt;水平画圈&lt;/h2&gt;
+                &lt;p class=&quot;card-hint&quot;&gt;保持水平，沿圆圈移动&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;保持手机水平，沿圆形轨迹移动&quot;&gt;
+                &lt;div class=&quot;orbit-ring&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+                &lt;div class=&quot;hand-device orbit-device&quot; aria-hidden=&quot;true&quot;&gt;
+                  &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+                &lt;p class=&quot;orbit-caption&quot;&gt;保持手机平稳&lt;/p&gt;
+              &lt;/div&gt;
+            &lt;/article&gt;
+
+            &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;flick-flat-title&quot;&gt;
+              &lt;div class=&quot;card-copy&quot;&gt;
+                &lt;p class=&quot;card-index&quot;&gt;04 / HORIZONTAL&lt;/p&gt;
+                &lt;h2 id=&quot;flick-flat-title&quot;&gt;左右轻挥&lt;/h2&gt;
+                &lt;p class=&quot;card-hint&quot;&gt;手腕带动手机左右轻挥&lt;/p&gt;
+              &lt;/div&gt;
+              &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;手持手机轻轻向左、向右挥动&quot;&gt;
+                &lt;span class=&quot;flick-left&quot; aria-hidden=&quot;true&quot;&gt;‹&lt;/span&gt;
+                &lt;span class=&quot;flick-right&quot; aria-hidden=&quot;true&quot;&gt;›&lt;/span&gt;
+                &lt;div class=&quot;hand-device flick-device&quot; aria-hidden=&quot;true&quot;&gt;
+                  &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;/div&gt;
+            &lt;/article&gt;
           &lt;/div&gt;
-        &lt;/article&gt;
+        &lt;/section&gt;
 
-        &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;gesture-circle-title&quot;&gt;
-          &lt;div class=&quot;card-copy&quot;&gt;
-            &lt;p class=&quot;card-index&quot;&gt;03 / HORIZONTAL&lt;/p&gt;
-            &lt;h2 id=&quot;gesture-circle-title&quot;&gt;水平画圈&lt;/h2&gt;
-            &lt;p class=&quot;card-hint&quot;&gt;保持水平，沿圆圈移动&lt;/p&gt;
+        &lt;aside class=&quot;queue-dialog&quot; role=&quot;dialog&quot; aria-modal=&quot;false&quot; aria-labelledby=&quot;queue-flat-title&quot; aria-describedby=&quot;queue-flat-rule&quot;&gt;
+          &lt;div class=&quot;queue-heading&quot;&gt;
+            &lt;h2 id=&quot;queue-flat-title&quot;&gt;动作队列&lt;/h2&gt;
+            &lt;span class=&quot;queue-state&quot;&gt;&lt;span class=&quot;status-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;待机&lt;/span&gt;
           &lt;/div&gt;
-          &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;保持手机水平，沿圆形轨迹移动&quot;&gt;
-            &lt;div class=&quot;orbit-ring&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
-            &lt;div class=&quot;hand-device orbit-device&quot; aria-hidden=&quot;true&quot;&gt;
-              &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
-              &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
-              &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
-            &lt;/div&gt;
-            &lt;p class=&quot;orbit-caption&quot;&gt;保持手机平稳&lt;/p&gt;
+          &lt;div class=&quot;queue-current&quot;&gt;
+            &lt;p class=&quot;eyebrow&quot;&gt;当前动作&lt;/p&gt;
+            &lt;p class=&quot;current-value&quot;&gt;&lt;span class=&quot;status-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;等待手势&lt;/p&gt;
           &lt;/div&gt;
-        &lt;/article&gt;
-
-        &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;gesture-flick-title&quot;&gt;
-          &lt;div class=&quot;card-copy&quot;&gt;
-            &lt;p class=&quot;card-index&quot;&gt;04 / HORIZONTAL&lt;/p&gt;
-            &lt;h2 id=&quot;gesture-flick-title&quot;&gt;左右轻挥&lt;/h2&gt;
-            &lt;p class=&quot;card-hint&quot;&gt;手腕带动手机左右轻挥&lt;/p&gt;
+          &lt;div class=&quot;queue-divider&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
+          &lt;p class=&quot;queue-flow-title&quot;&gt;识别后按顺序处理&lt;/p&gt;
+          &lt;div class=&quot;queue-flow&quot; aria-label=&quot;动作处理顺序&quot;&gt;
+            &lt;div class=&quot;flow-step&quot;&gt;&lt;span class=&quot;flow-number&quot;&gt;01&lt;/span&gt;&lt;span&gt;当前动作继续执行&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;flow-step&quot;&gt;&lt;span class=&quot;flow-number&quot;&gt;02&lt;/span&gt;&lt;span&gt;新手势依序排队&lt;/span&gt;&lt;/div&gt;
+            &lt;div class=&quot;flow-step&quot;&gt;&lt;span class=&quot;flow-number&quot;&gt;03&lt;/span&gt;&lt;span&gt;完成后执行下一项&lt;/span&gt;&lt;/div&gt;
           &lt;/div&gt;
-          &lt;div class=&quot;demo-stage&quot; role=&quot;img&quot; aria-label=&quot;手持手机轻轻向左、向右挥动&quot;&gt;
-            &lt;span class=&quot;flick-left&quot; aria-hidden=&quot;true&quot;&gt;‹&lt;/span&gt;
-            &lt;span class=&quot;flick-right&quot; aria-hidden=&quot;true&quot;&gt;›&lt;/span&gt;
-            &lt;div class=&quot;hand-device flick-device&quot; aria-hidden=&quot;true&quot;&gt;
-              &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
-              &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
-              &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
-            &lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/article&gt;
-      &lt;/div&gt;
-    &lt;/section&gt;
-
-    &lt;aside class=&quot;queue-dialog&quot; role=&quot;dialog&quot; aria-modal=&quot;false&quot; aria-labelledby=&quot;gesture-queue-title&quot; aria-describedby=&quot;gesture-queue-rule&quot;&gt;
-      &lt;div class=&quot;queue-heading&quot;&gt;
-        &lt;h2 id=&quot;gesture-queue-title&quot;&gt;动作队列&lt;/h2&gt;
-        &lt;span class=&quot;queue-state&quot;&gt;&lt;span class=&quot;status-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;待机&lt;/span&gt;
-      &lt;/div&gt;
-
-      &lt;div class=&quot;queue-current&quot;&gt;
-        &lt;p class=&quot;eyebrow&quot;&gt;当前动作&lt;/p&gt;
-        &lt;p class=&quot;current-value&quot;&gt;&lt;span class=&quot;status-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;等待手势&lt;/p&gt;
-      &lt;/div&gt;
-
-      &lt;div class=&quot;queue-divider&quot; aria-hidden=&quot;true&quot;&gt;&lt;/div&gt;
-      &lt;p class=&quot;queue-flow-title&quot;&gt;识别后按顺序处理&lt;/p&gt;
-      &lt;div class=&quot;queue-flow&quot; aria-label=&quot;动作处理顺序&quot;&gt;
-        &lt;div class=&quot;flow-step&quot;&gt;&lt;span class=&quot;flow-number&quot;&gt;01&lt;/span&gt;&lt;span&gt;当前动作继续执行&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;flow-step&quot;&gt;&lt;span class=&quot;flow-number&quot;&gt;02&lt;/span&gt;&lt;span&gt;新手势依序排队&lt;/span&gt;&lt;/div&gt;
-        &lt;div class=&quot;flow-step&quot;&gt;&lt;span class=&quot;flow-number&quot;&gt;03&lt;/span&gt;&lt;span&gt;完成后执行下一项&lt;/span&gt;&lt;/div&gt;
-      &lt;/div&gt;
-
-      &lt;p class=&quot;queue-note&quot; id=&quot;gesture-queue-rule&quot;&gt;&lt;strong&gt;执行中收到新手势&lt;/strong&gt;会加入队列等待，当前动作不会被打断。&lt;/p&gt;
-    &lt;/aside&gt;
-  &lt;/main&gt;
+          &lt;p class=&quot;queue-note&quot; id=&quot;queue-flat-rule&quot;&gt;&lt;strong&gt;执行中收到新手势&lt;/strong&gt;会加入队列等待，当前动作不会被打断。&lt;/p&gt;
+        &lt;/aside&gt;
+      &lt;/main&gt;
+    &lt;/div&gt;
+  &lt;/section&gt;
 
   &lt;script&gt;
     (() =&gt; {
-      const root = document.getElementById(&quot;gesture-landscape-root&quot;);
+      const root = document.getElementById(&quot;gesture-alternatives-root&quot;);
       if (!root) return;
-      const fitScreen = () =&gt; {
-        const scale = Math.min(root.clientWidth / 844, 1);
-        root.style.setProperty(&quot;--ui-scale&quot;, String(scale));
+      const screens = root.querySelectorAll(&quot;.gesture-demo&quot;);
+      const fitScreen = (screen) =&gt; {
+        const scale = Math.min(screen.clientWidth / 844, 1);
+        screen.style.setProperty(&quot;--ui-scale&quot;, String(scale));
       };
-      fitScreen();
-      new ResizeObserver(fitScreen).observe(root);
+      const observer = new ResizeObserver((entries) =&gt; entries.forEach((entry) =&gt; fitScreen(entry.target)));
+      screens.forEach((screen) =&gt; {
+        fitScreen(screen);
+        observer.observe(screen);
+      });
     })();
   &lt;/script&gt;
 &lt;/div&gt;
