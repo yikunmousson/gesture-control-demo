@@ -5,19 +5,19 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="referrer" content="no-referrer">
 <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'unsafe-inline' 'unsafe-eval' 'wasm-unsafe-eval' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src 'unsafe-inline' blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src 'self'; object-src 'none'; base-uri 'none'; form-action 'none'">
-<title>横屏手势操作方案</title>
+<title>横屏手势指引：侧视深度方案</title>
 <style>:root{color-scheme:light dark;background:light-dark(rgb(255 255 255), rgb(24 24 24))}html,body{margin:0}body{box-sizing:border-box;padding:1rem;background:inherit}iframe{display:block;width:100%;height:calc(100vh - 2rem);margin:0 auto;border:0}</style>
 
 </head>
 <body>
-<iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="横屏手势操作方案" data-srcdoc="&lt;!doctype html&gt;
+<iframe id="codex-visualization" sandbox="allow-scripts" referrerpolicy="no-referrer" title="横屏手势指引：侧视深度方案" data-srcdoc="&lt;!doctype html&gt;
 &lt;html lang=&quot;en&quot; data-visualize-standalone&gt;
 &lt;head&gt;
 &lt;meta charset=&quot;utf-8&quot;&gt;
 &lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1&quot;&gt;
 &lt;meta name=&quot;referrer&quot; content=&quot;no-referrer&quot;&gt;
 &lt;meta http-equiv=&quot;Content-Security-Policy&quot; content=&quot;default-src &#x27;none&#x27;; script-src &#x27;unsafe-inline&#x27; &#x27;unsafe-eval&#x27; &#x27;wasm-unsafe-eval&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; style-src &#x27;unsafe-inline&#x27; blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; img-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; font-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; media-src blob: data: https://cdnjs.cloudflare.com https://cdn.jsdelivr.net https://esm.sh https://fonts.bunny.net https://fonts.googleapis.com https://fonts.gstatic.com https://unpkg.com; worker-src blob:; connect-src blob: data:; frame-src &#x27;none&#x27;; object-src &#x27;none&#x27;; base-uri &#x27;none&#x27;; form-action &#x27;none&#x27;&quot;&gt;
-&lt;title&gt;横屏手势操作方案&lt;/title&gt;
+&lt;title&gt;横屏手势指引：侧视深度方案&lt;/title&gt;
 &lt;style&gt;:root {
   color-scheme: light dark;
   background-color: var(
@@ -2216,6 +2216,215 @@ html&gt;body{padding:0}&lt;/style&gt;
     #gesture-alternatives-root .depth-in-shadow { animation: shadowTowardView 2.8s ease-in-out infinite alternate; }
     #gesture-alternatives-root .depth-away-shadow { animation: shadowAwayView 2.8s ease-in-out infinite alternate; }
 
+    /* A side-on scene makes distance from the viewer the visible axis. */
+    #gesture-alternatives-root .guide-depth .depth-layout {
+      min-height: 0;
+      display: grid;
+      grid-template-rows: minmax(0, 1.45fr) minmax(0, 1fr);
+      gap: 9px;
+    }
+
+    #gesture-alternatives-root .depth-pair,
+    #gesture-alternatives-root .gesture-strip {
+      min-height: 0;
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 9px;
+    }
+
+    #gesture-alternatives-root .depth-card {
+      min-width: 0;
+      min-height: 0;
+      overflow: hidden;
+      display: grid;
+      grid-template-rows: 40px minmax(0, 1fr);
+      gap: 5px;
+      padding: 9px 10px 10px;
+      border: 1px solid var(--ui-line);
+      border-radius: 15px;
+      background: var(--ui-surface);
+      box-shadow: 0 4px 14px color-mix(in srgb, var(--ui-text) 4%, transparent);
+    }
+
+    #gesture-alternatives-root .depth-card-copy { min-width: 0; display: flex; flex-direction: column; justify-content: center; }
+    #gesture-alternatives-root .depth-card-label { display: flex; align-items: baseline; gap: 9px; }
+    #gesture-alternatives-root .depth-card .card-index { margin: 0; font-size: 11px; }
+    #gesture-alternatives-root .depth-card h2 { font-size: 16px; line-height: 1.15; font-weight: 500; white-space: nowrap; }
+    #gesture-alternatives-root .depth-card .card-hint { max-width: none; margin-top: 3px; font-size: 11px; line-height: 1.2; }
+
+    #gesture-alternatives-root .profile-stage {
+      min-height: 0;
+      position: relative;
+      overflow: hidden;
+      border-radius: 11px;
+      background:
+        linear-gradient(180deg, color-mix(in srgb, var(--ui-accent) 3%, var(--ui-surface-soft)), var(--ui-surface-soft));
+    }
+
+    #gesture-alternatives-root .profile-stage::before {
+      content: &quot;&quot;;
+      position: absolute;
+      inset: 37% 0 0;
+      opacity: .72;
+      transform: perspective(180px) rotateX(58deg);
+      transform-origin: 50% 0;
+      background-image:
+        linear-gradient(color-mix(in srgb, var(--ui-accent) 12%, transparent) 1px, transparent 1px),
+        linear-gradient(90deg, color-mix(in srgb, var(--ui-accent) 12%, transparent) 1px, transparent 1px);
+      background-size: 22px 14px;
+    }
+
+    #gesture-alternatives-root .profile-axis {
+      position: absolute;
+      z-index: 1;
+      left: 50px;
+      right: 14px;
+      top: 29%;
+      border-top: 1px dashed color-mix(in srgb, var(--ui-accent) 55%, transparent);
+    }
+
+    #gesture-alternatives-root .profile-axis::before,
+    #gesture-alternatives-root .profile-axis::after {
+      content: &quot;&quot;;
+      position: absolute;
+      top: -4px;
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+    }
+
+    #gesture-alternatives-root .profile-axis::before { left: 0; background: var(--ui-accent); }
+    #gesture-alternatives-root .profile-axis::after { right: 0; background: var(--ui-surface); border: 1px solid var(--ui-accent); }
+
+    #gesture-alternatives-root .profile-axis-name {
+      position: absolute;
+      z-index: 1;
+      right: 9px;
+      top: 7px;
+      color: var(--ui-accent);
+      font-size: 11px;
+      line-height: 1;
+      letter-spacing: .02em;
+    }
+
+    #gesture-alternatives-root .profile-distance {
+      position: absolute;
+      z-index: 1;
+      top: 12%;
+      color: var(--ui-muted);
+      font-size: 11px;
+      line-height: 1;
+    }
+
+    #gesture-alternatives-root .profile-near { left: 60px; }
+    #gesture-alternatives-root .profile-far { right: 13px; }
+
+    #gesture-alternatives-root .profile-observer {
+      position: absolute;
+      z-index: 3;
+      left: 9px;
+      top: 13px;
+      bottom: 6px;
+      width: 43px;
+    }
+
+    #gesture-alternatives-root .profile-head {
+      position: absolute;
+      left: 4px;
+      top: 0;
+      width: 32px;
+      height: 39px;
+      border-radius: 48% 43% 43% 49%;
+      background: var(--ui-skin);
+    }
+
+    #gesture-alternatives-root .profile-head::before {
+      content: &quot;&quot;;
+      position: absolute;
+      left: 0;
+      top: -1px;
+      width: 30px;
+      height: 15px;
+      border-radius: 18px 17px 5px 4px;
+      background: color-mix(in srgb, var(--ui-text) 72%, var(--ui-skin));
+    }
+
+    #gesture-alternatives-root .profile-head::after {
+      content: &quot;&quot;;
+      position: absolute;
+      right: -5px;
+      top: 16px;
+      width: 8px;
+      height: 8px;
+      background: var(--ui-skin);
+      clip-path: polygon(0 10%, 100% 50%, 0 90%);
+    }
+
+    #gesture-alternatives-root .profile-eye {
+      position: absolute;
+      z-index: 1;
+      right: 6px;
+      top: 17px;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+      background: var(--ui-text);
+    }
+
+    #gesture-alternatives-root .profile-neck {
+      position: absolute;
+      left: 15px;
+      top: 33px;
+      width: 13px;
+      height: 18px;
+      background: var(--ui-skin);
+    }
+
+    #gesture-alternatives-root .profile-shoulder {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 43px;
+      height: 36px;
+      border-radius: 22px 22px 5px 5px;
+      background: var(--ui-accent-soft);
+      border: 1px solid color-mix(in srgb, var(--ui-accent) 32%, transparent);
+    }
+
+    #gesture-alternatives-root .profile-phone {
+      position: absolute;
+      z-index: 2;
+      left: calc(57% - 38px);
+      top: 29%;
+      margin-top: -29px;
+      transform-origin: 50% 50%;
+    }
+
+    #gesture-alternatives-root .profile-moving-in { animation: sideApproach 2.7s ease-in-out infinite alternate; }
+    #gesture-alternatives-root .profile-moving-away { animation: sideRetreat 2.7s ease-in-out infinite alternate; }
+
+    #gesture-alternatives-root .profile-direction {
+      position: absolute;
+      z-index: 2;
+      left: 62px;
+      bottom: 8px;
+      color: var(--ui-accent);
+      font-size: 11px;
+      line-height: 1;
+      font-weight: 500;
+    }
+
+    #gesture-alternatives-root .guide-depth .gesture-strip .gesture-card {
+      grid-template-columns: 106px minmax(0, 1fr);
+      gap: 7px;
+      padding: 8px 10px;
+    }
+
+    #gesture-alternatives-root .guide-depth .gesture-strip .card-index { margin-bottom: 4px; }
+    #gesture-alternatives-root .guide-depth .gesture-strip .gesture-card h2 { font-size: 15px; }
+    #gesture-alternatives-root .guide-depth .gesture-strip .card-hint { max-width: 98px; margin-top: 4px; line-height: 1.3; }
+    #gesture-alternatives-root .guide-depth .gesture-strip .demo-stage { min-height: 0; }
+
     #gesture-alternatives-root .queue-dialog {
       min-width: 0;
       height: 100%;
@@ -2395,6 +2604,14 @@ html&gt;body{padding:0}&lt;/style&gt;
       from { transform: translate(-50%, 3px) scale(1.24); opacity: .16; filter: blur(4px); }
       to { transform: translate(-50%, -5px) scale(.62); opacity: .3; filter: blur(1px); }
     }
+    @keyframes sideApproach {
+      from { transform: translateX(66px) scale(.72); }
+      to { transform: translateX(-47px) scale(1.08); }
+    }
+    @keyframes sideRetreat {
+      from { transform: translateX(-47px) scale(1.08); }
+      to { transform: translateX(66px) scale(.72); }
+    }
 
     @media (prefers-reduced-motion: reduce) {
       #gesture-alternatives-root .gesture-demo *,
@@ -2407,66 +2624,65 @@ html&gt;body{padding:0}&lt;/style&gt;
       #gesture-alternatives-root .flick-device { transform: translateX(0); }
       #gesture-alternatives-root .depth-in-device { transform: translate3d(0, 9px, 42px) scale(1.16) rotateX(18deg); }
       #gesture-alternatives-root .depth-away-device { transform: translate3d(0, -6px, -42px) scale(.72) rotateX(18deg); }
+      #gesture-alternatives-root .profile-moving-in { transform: translateX(-47px) scale(1.08); }
+      #gesture-alternatives-root .profile-moving-away { transform: translateX(66px) scale(.72); }
     }
   &lt;/style&gt;
 
-  &lt;section data-variant=&quot;Z轴进退&quot; aria-label=&quot;Z轴深度位移方案&quot;&gt;
+  &lt;section data-variant=&quot;侧视深度&quot; aria-label=&quot;侧视深度位移方案&quot;&gt;
     &lt;div class=&quot;gesture-demo&quot; id=&quot;gesture-depth-screen&quot;&gt;
-      &lt;main class=&quot;screen&quot; aria-label=&quot;Z轴深度位移手势示意&quot;&gt;
-        &lt;section class=&quot;guide&quot; aria-labelledby=&quot;guide-depth-title&quot;&gt;
+      &lt;main class=&quot;screen&quot; aria-label=&quot;侧视深度位移手势示意&quot;&gt;
+        &lt;section class=&quot;guide guide-depth&quot; aria-labelledby=&quot;guide-depth-title&quot;&gt;
           &lt;header class=&quot;guide-heading&quot;&gt;
             &lt;div class=&quot;heading-copy&quot;&gt;
               &lt;h1 id=&quot;guide-depth-title&quot;&gt;手势操作指引&lt;/h1&gt;
               &lt;p class=&quot;subheading&quot;&gt;轻握手机，跟随动画完成动作&lt;/p&gt;
             &lt;/div&gt;
-            &lt;div class=&quot;mode-label&quot;&gt;&lt;span class=&quot;mode-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;Z 轴进退示意&lt;/div&gt;
+            &lt;div class=&quot;mode-label&quot;&gt;&lt;span class=&quot;mode-dot&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;侧视距离示意&lt;/div&gt;
           &lt;/header&gt;
 
-          &lt;div class=&quot;gesture-grid&quot; aria-label=&quot;四种手势示意&quot;&gt;
-            &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;lift-depth-title&quot;&gt;
-              &lt;div class=&quot;card-copy&quot;&gt;
-                &lt;p class=&quot;card-index&quot;&gt;01 / Z-AXIS&lt;/p&gt;
-                &lt;h2 id=&quot;lift-depth-title&quot;&gt;手机上抬&lt;/h2&gt;
-                &lt;p class=&quot;card-hint&quot;&gt;沿 Z 轴，朝视线靠近&lt;/p&gt;
-              &lt;/div&gt;
-              &lt;div class=&quot;demo-stage depth-stage&quot; role=&quot;img&quot; aria-label=&quot;手机沿 Z 轴从远处靠近视线，逐渐变大&quot;&gt;
-                &lt;span class=&quot;depth-grid&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                &lt;span class=&quot;depth-axis&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                &lt;span class=&quot;depth-ghost depth-ghost-far&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                &lt;span class=&quot;depth-ghost depth-ghost-near&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                &lt;span class=&quot;depth-endpoint depth-far&quot; aria-hidden=&quot;true&quot;&gt;远处 &lt;strong&gt;· Z&lt;/strong&gt;&lt;/span&gt;
-                &lt;span class=&quot;depth-endpoint depth-near&quot; aria-hidden=&quot;true&quot;&gt;&lt;strong&gt;近处 · Z&lt;/strong&gt;&lt;/span&gt;
-                &lt;span class=&quot;depth-shadow depth-in-shadow&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                &lt;div class=&quot;hand-device depth-in-device&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
-                  &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
-                  &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+          &lt;div class=&quot;depth-layout&quot; aria-label=&quot;四种手势示意&quot;&gt;
+            &lt;div class=&quot;depth-pair&quot; aria-label=&quot;手机沿视线方向的深度移动&quot;&gt;
+              &lt;article class=&quot;depth-card&quot; aria-labelledby=&quot;lift-depth-title&quot;&gt;
+                &lt;div class=&quot;depth-card-copy&quot;&gt;
+                  &lt;div class=&quot;depth-card-label&quot;&gt;&lt;p class=&quot;card-index&quot;&gt;01 / Z AXIS&lt;/p&gt;&lt;h2 id=&quot;lift-depth-title&quot;&gt;手机上抬&lt;/h2&gt;&lt;/div&gt;
+                  &lt;p class=&quot;card-hint&quot;&gt;从远处移动到眼前&lt;/p&gt;
                 &lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/article&gt;
-
-            &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;press-depth-title&quot;&gt;
-              &lt;div class=&quot;card-copy&quot;&gt;
-                &lt;p class=&quot;card-index&quot;&gt;02 / Z-AXIS&lt;/p&gt;
-                &lt;h2 id=&quot;press-depth-title&quot;&gt;手机下压&lt;/h2&gt;
-                &lt;p class=&quot;card-hint&quot;&gt;沿 Z 轴，远离视线移动&lt;/p&gt;
-              &lt;/div&gt;
-              &lt;div class=&quot;demo-stage depth-stage&quot; role=&quot;img&quot; aria-label=&quot;手机沿 Z 轴从近处退向远处，逐渐变小&quot;&gt;
-                &lt;span class=&quot;depth-grid&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                &lt;span class=&quot;depth-axis&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                &lt;span class=&quot;depth-ghost depth-ghost-far&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                &lt;span class=&quot;depth-ghost depth-ghost-near&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                &lt;span class=&quot;depth-endpoint depth-far&quot; aria-hidden=&quot;true&quot;&gt;远处 &lt;strong&gt;· Z&lt;/strong&gt;&lt;/span&gt;
-                &lt;span class=&quot;depth-endpoint depth-near&quot; aria-hidden=&quot;true&quot;&gt;&lt;strong&gt;近处 · Z&lt;/strong&gt;&lt;/span&gt;
-                &lt;span class=&quot;depth-shadow depth-away-shadow&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
-                &lt;div class=&quot;hand-device depth-away-device&quot; aria-hidden=&quot;true&quot;&gt;
-                  &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
-                  &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;
-                  &lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+                &lt;div class=&quot;profile-stage&quot; role=&quot;img&quot; aria-label=&quot;侧面示意：手机沿视线方向从远处移动到眼前&quot;&gt;
+                  &lt;span class=&quot;profile-axis&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;profile-axis-name&quot; aria-hidden=&quot;true&quot;&gt;视线方向 · Z 轴前后&lt;/span&gt;
+                  &lt;span class=&quot;profile-distance profile-near&quot; aria-hidden=&quot;true&quot;&gt;眼前&lt;/span&gt;
+                  &lt;span class=&quot;profile-distance profile-far&quot; aria-hidden=&quot;true&quot;&gt;远处&lt;/span&gt;
+                  &lt;div class=&quot;profile-observer&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;profile-head&quot;&gt;&lt;i class=&quot;profile-eye&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class=&quot;profile-neck&quot;&gt;&lt;/span&gt;&lt;span class=&quot;profile-shoulder&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+                  &lt;div class=&quot;hand-device profile-phone profile-moving-in&quot; aria-hidden=&quot;true&quot;&gt;
+                    &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;&lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;span class=&quot;profile-direction&quot; aria-hidden=&quot;true&quot;&gt;← 靠近视线&lt;/span&gt;
                 &lt;/div&gt;
-              &lt;/div&gt;
-            &lt;/article&gt;
+              &lt;/article&gt;
 
+              &lt;article class=&quot;depth-card&quot; aria-labelledby=&quot;press-depth-title&quot;&gt;
+                &lt;div class=&quot;depth-card-copy&quot;&gt;
+                  &lt;div class=&quot;depth-card-label&quot;&gt;&lt;p class=&quot;card-index&quot;&gt;02 / Z AXIS&lt;/p&gt;&lt;h2 id=&quot;press-depth-title&quot;&gt;手机下压&lt;/h2&gt;&lt;/div&gt;
+                  &lt;p class=&quot;card-hint&quot;&gt;从眼前退向远处&lt;/p&gt;
+                &lt;/div&gt;
+                &lt;div class=&quot;profile-stage&quot; role=&quot;img&quot; aria-label=&quot;侧面示意：手机沿视线方向从眼前退向远处&quot;&gt;
+                  &lt;span class=&quot;profile-axis&quot; aria-hidden=&quot;true&quot;&gt;&lt;/span&gt;
+                  &lt;span class=&quot;profile-axis-name&quot; aria-hidden=&quot;true&quot;&gt;视线方向 · Z 轴前后&lt;/span&gt;
+                  &lt;span class=&quot;profile-distance profile-near&quot; aria-hidden=&quot;true&quot;&gt;眼前&lt;/span&gt;
+                  &lt;span class=&quot;profile-distance profile-far&quot; aria-hidden=&quot;true&quot;&gt;远处&lt;/span&gt;
+                  &lt;div class=&quot;profile-observer&quot; aria-hidden=&quot;true&quot;&gt;&lt;span class=&quot;profile-head&quot;&gt;&lt;i class=&quot;profile-eye&quot;&gt;&lt;/i&gt;&lt;/span&gt;&lt;span class=&quot;profile-neck&quot;&gt;&lt;/span&gt;&lt;span class=&quot;profile-shoulder&quot;&gt;&lt;/span&gt;&lt;/div&gt;
+                  &lt;div class=&quot;hand-device profile-phone profile-moving-away&quot; aria-hidden=&quot;true&quot;&gt;
+                    &lt;span class=&quot;wrist&quot;&gt;&lt;/span&gt;&lt;span class=&quot;palm&quot;&gt;&lt;/span&gt;
+                    &lt;span class=&quot;finger finger-one&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-two&quot;&gt;&lt;/span&gt;&lt;span class=&quot;finger finger-three&quot;&gt;&lt;/span&gt;&lt;span class=&quot;thumb&quot;&gt;&lt;/span&gt;&lt;span class=&quot;phone&quot;&gt;&lt;/span&gt;
+                  &lt;/div&gt;
+                  &lt;span class=&quot;profile-direction&quot; aria-hidden=&quot;true&quot;&gt;远离视线 →&lt;/span&gt;
+                &lt;/div&gt;
+              &lt;/article&gt;
+            &lt;/div&gt;
+
+            &lt;div class=&quot;gesture-strip&quot; aria-label=&quot;水平方向的手势&quot;&gt;
             &lt;article class=&quot;gesture-card&quot; aria-labelledby=&quot;circle-depth-title&quot;&gt;
               &lt;div class=&quot;card-copy&quot;&gt;
                 &lt;p class=&quot;card-index&quot;&gt;03 / HORIZONTAL&lt;/p&gt;
@@ -2500,6 +2716,7 @@ html&gt;body{padding:0}&lt;/style&gt;
                 &lt;/div&gt;
               &lt;/div&gt;
             &lt;/article&gt;
+            &lt;/div&gt;
           &lt;/div&gt;
         &lt;/section&gt;
 
